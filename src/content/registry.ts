@@ -44,6 +44,17 @@ export const SUBJECTS: SubjectItem[] = [
     accentColor: '#0284C7',
   },
   {
+    id: 'electricity-magnetism-2',
+    title: 'Electricity and Magnetism',
+    subtitle: 'Fields, Potential, Circuits & Maxwell’s Equations',
+    description:
+      'Visualize electric field lines, Gauss’s law surfaces, circuit dynamics, and electromagnetic induction.',
+    status: 'coming-soon',
+    chapterIds: [],
+    resourceIds: [],
+    accentColor: '#0284C7',
+  },  
+  {
     id: 'waves-optics',
     title: 'Waves and Optics',
     subtitle: 'Superposition, Interference, Diffraction & Lenses',
