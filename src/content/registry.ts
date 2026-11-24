@@ -21,6 +21,7 @@ export const SUBJECTS: SubjectItem[] = [
     chapterIds: [
       'vectors',
       'kinematics',
+      'kinematics2',
       'dynamics',
       'work-energy',
       'momentum',
