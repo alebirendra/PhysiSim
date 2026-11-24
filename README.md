@@ -1,4 +1,4 @@
-# PhysicsKit
+# PhysiSim
 
 **Understand Physics. See It. Explore It.**
 
