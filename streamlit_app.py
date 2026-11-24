@@ -12,7 +12,7 @@ DIST_DIR = BASE_DIR / "dist"
 STREAMLIT_STATIC_DIR = BASE_DIR / "streamlit_static"
 
 st.set_page_config(
-    page_title="PhysicsKit — Understand Physics. See It. Explore It.",
+    page_title="PhysiSim — Understand Physics. See It. Explore It.",
     page_icon="⚛️",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -86,7 +86,7 @@ def _build_tutor_system_instruction(context: dict[str, Any]) -> str:
 
     return "\n".join(
         [
-            "You are the PhysicsKit AI Physics Tutor, a rigorous, encouraging physics educator.",
+            "You are the PhysiSim AI Physics Tutor, a rigorous, encouraging physics educator.",
             f"Active learning context -> Subject: {subject} | Chapter: {chapter} | Topic: {topic}.",
             f'Prioritize concepts, equations, and intuition directly relevant to "{topic}" in "{chapter}" unless the student explicitly changes subjects.',
             f"Target learner level: {level}. {level_guidance}",
