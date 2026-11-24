@@ -33,6 +33,27 @@ export const SUBJECTS: SubjectItem[] = [
     accentColor: '#2563EB',
   },
   {
+    id: 'classical-mechanics-2',
+    title: 'Classical Mechanics 2',
+    subtitle: 'Motion, Forces, Energy & Spatial Geometry',
+    description:
+      'Build rock-solid geometric and mathematical intuition for how objects move, interact, balance, and rotate in 2D and 3D space.',
+    status: 'available',
+    chapterIds: [
+      'vectors',
+      'kinematics',
+      'kinematics2',
+      'dynamics',
+      'work-energy',
+      'momentum',
+      'rotational-motion',
+      'gravitation',
+      'oscillations',
+    ],
+    resourceIds: ['cm-foundations-text', 'vector-lab-suite', 'cm-problem-bank'],
+    accentColor: '#2563EB',
+  },  
+  {
     id: 'electricity-magnetism',
     title: 'Electricity and Magnetism',
     subtitle: 'Fields, Potential, Circuits & Maxwell’s Equations',
