@@ -55,7 +55,7 @@ export function HomePage({ recentSimIds, completedTopicIds, onNavigate }: HomePa
             Learn physics by manipulating live geometry and equations.
           </h1>
           <p className="text-base text-slate-600 leading-relaxed max-w-2xl">
-            PhysicsKit pairs clear conceptual lessons with real-time 2D and 3D simulations, step-by-step derivations, interactive quizzes, and an AI physics tutor—beginning with Classical Mechanics and Vectors.
+            PhysiSim pairs clear conceptual lessons with real-time 2D and 3D simulations, step-by-step derivations, interactive quizzes, and an AI physics tutor—beginning with Classical Mechanics and Vectors.
           </p>
 
           {/* Hero Search Bar */}
