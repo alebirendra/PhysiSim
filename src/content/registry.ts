@@ -45,7 +45,7 @@ export const SUBJECTS: SubjectItem[] = [
   },
   {
     id: 'electricity-magnetism-2',
-    title: 'Electricity and Magnetism',
+    title: 'Electricity and Magnetism 2',
     subtitle: 'Fields, Potential, Circuits & Maxwell’s Equations',
     description:
       'Visualize electric field lines, Gauss’s law surfaces, circuit dynamics, and electromagnetic induction.',
