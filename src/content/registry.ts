@@ -33,7 +33,7 @@ export const SUBJECTS: SubjectItem[] = [
     accentColor: '#2563EB',
   },
   {
-    id: 'classical-mechanics-2',
+    id: 'classical-mechanics',
     title: 'Classical Mechanics 2',
     subtitle: 'Motion, Forces, Energy & Spatial Geometry',
     description:
