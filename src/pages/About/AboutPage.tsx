@@ -9,12 +9,12 @@ export function AboutPage({ onNavigate }: AboutPageProps) {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
       <div className="space-y-3">
-        <div className="text-xs font-semibold text-blue-600">About PhysicsKit</div>
+        <div className="text-xs font-semibold text-blue-600">About PhysiSim</div>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900">
           Understand Physics. See It. Explore It.
         </h1>
         <p className="text-base text-slate-600 leading-relaxed">
-          PhysicsKit is an interactive learning and simulation platform built for students, educators, and self-learners who want to connect physical intuition directly with real-time mathematics.
+          PhysiSim is an interactive learning and simulation platform built for students, educators, and self-learners who want to connect physical intuition directly with real-time mathematics.
         </p>
       </div>
 
