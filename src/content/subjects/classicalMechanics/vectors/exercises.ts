@@ -204,1955 +204,1637 @@ export const VECTORS_EXERCISES: PracticeQuestion[] = [
     explanation:
       'False. Two vectors sum to zero only when $\\vec{A} = -\\vec{B}$, which requires them to have equal magnitudes and opposite directions. (You need at least three vectors of unequal magnitudes to sum to zero.)',
   },  
-];
-
-import type { PracticeQuestion } from '../../../../types/physics';
-
-export const KINEMATICS_1D_EXERCISES: PracticeQuestion[] = [
-  // ─────────────────────────────────────────────────────────────
-  // Displacement, distance, speed, velocity
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q1',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt:
-      'Can displacement be zero while the distance traveled is non-zero, and can the distance traveled be zero while displacement is non-zero?',
-    options: [
-      'Yes to both.',
-      'Yes to the first; no to the second.',
-      'No to the first; yes to the second.',
-      'No to both.',
-    ],
-    correctOptionIndex: 1,
-    explanation:
-      'A round trip has zero displacement but non-zero distance. If the distance is zero, nothing moved, so the displacement must also be zero.',
-  },
-  {
-    id: 'kin-q2',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'multiple-choice',
-    prompt:
-      'A particle moves along the x-axis from x = 5 m to x = -2 m and then to x = 3 m. Which pair (distance, displacement) is correct?',
-    options: [
-      '12 m, -2 m',
-      '12 m, +2 m',
-      '2 m, -2 m',
-      '7 m, -2 m',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Distance = |5-(-2)| + |-2-3| = 7 + 5 = 12 m. Displacement = x_final - x_initial = 3 - 5 = -2 m.',
-  },
-  {
-    id: 'kin-q3',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt:
-      'Can the magnitude of the average velocity over an interval ever exceed the average speed over the same interval?',
-    options: [
-      'Yes, whenever the particle reverses direction.',
-      'No — |average velocity| is always less than or equal to the average speed.',
-      'Yes, if the acceleration is constant.',
-      'Only when the average velocity is zero.',
-    ],
-    correctOptionIndex: 1,
-    explanation:
-      '|Δx| is at most the total path length, so dividing both by Δt gives |v_avg| ≤ s_avg (triangle inequality).',
-  },
-  {
-    id: 'kin-q4',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'multiple-choice',
-    prompt:
-      'A car covers the first half of a distance at speed v1 and the second half at speed v2. What is its average speed?',
-    options: [
-      '2 v1 v2 / (v1 + v2)',
-      '(v1 + v2) / 2',
-      '√(v1 v2)',
-      'v1 v2 / (v1 + v2)',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Let the total distance be 2d. Time = d/v1 + d/v2, so average speed = 2d/time = 2 v1 v2/(v1 + v2), the harmonic mean.',
-  },
-  {
-    id: 'kin-q5',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'multiple-choice',
-    prompt:
-      'A car travels for the first half of the TIME at speed v1 and for the second half at speed v2. What is its average speed?',
-    options: [
-      '(v1 + v2) / 2',
-      '2 v1 v2 / (v1 + v2)',
-      '√(v1 v2)',
-      'v1 v2 / (v1 + v2)',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Let the total time be 2t. Distance = (v1 + v2)t, so average speed = (v1 + v2)/2, the arithmetic mean.',
-  },
-  {
-    id: 'kin-q6',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt:
-      'Can instantaneous speed be negative? Can the magnitude of instantaneous velocity exceed the instantaneous speed?',
-    options: [
-      'Neither is possible: speed is the magnitude of velocity.',
-      'Speed can be negative when the particle moves backwards.',
-      '|velocity| can exceed speed during deceleration.',
-      'Both are possible in one-dimensional motion.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Speed is defined as |v| ≥ 0, so it is never negative and |v| = speed exactly.',
-  },
-  {
-    id: 'kin-q7',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'true-false',
-    prompt:
-      'True or False: In one-dimensional motion with continuous velocity, constant speed implies constant velocity.',
-    options: ['True', 'False'],
-    correctOptionIndex: 0,
-    explanation:
-      'True. A continuous v that never passes through zero cannot change sign, so v is either always +c or always -c.',
-  },
-  {
-    id: 'kin-q8',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Easy',
-    type: 'multiple-choice',
-    prompt:
-      'A particle moves at v = +3 m/s for 0 ≤ t ≤ 2 s and at v = -3 m/s for 2 < t ≤ 4 s. Which set of values is correct for [0, 4] s?',
-    options: [
-      'Displacement 0 m, distance 12 m, average velocity 0, average speed 3 m/s',
-      'Displacement 12 m, distance 12 m, average velocity 3, average speed 3',
-      'Displacement 0 m, distance 0 m, average velocity 0, average speed 0',
-      'Displacement -12 m, distance 12 m, average velocity -3, average speed 3',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The two displacements (+6 m and -6 m) cancel, but the path length is 6 + 6 = 12 m; average speed = 12/4 = 3 m/s.',
-  },
-  {
-    id: 'kin-q9',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
+{
+    id: 'vect-q13',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
     difficulty: 'Medium',
-    type: 'conceptual',
+    type: 'multiple-choice',
     prompt:
-      'Is it possible to have a non-zero average velocity over an interval during which the particle is instantaneously at rest at some point?',
+      'Which is a correct vector equation for the plane containing non-collinear points $\\vec{r}_1,\\vec{r}_2,\\vec{r}_3$?',
     options: [
-      'Yes — e.g. v(t) = (t - 1)^2 on [0, 2] has v(1) = 0 but a non-zero average velocity.',
-      'No — the particle being at rest forces the average velocity to be zero.',
-      'Only if the particle is at rest for the whole interval.',
-      'Only if the motion is uniformly accelerated.',
+      '$(\\vec{r}-\\vec{r}_1)\\cdot[(\\vec{r}_2-\\vec{r}_1)\\times(\\vec{r}_3-\\vec{r}_1)] = 0$',
+      '$(\\vec{r}-\\vec{r}_1)\\times[(\\vec{r}_2-\\vec{r}_1)\\times(\\vec{r}_3-\\vec{r}_1)] = 0$',
+      '$(\\vec{r}-\\vec{r}_1)\\cdot(\\vec{r}_2-\\vec{r}_1) = 0$',
+      '$(\\vec{r}-\\vec{r}_1)\\cdot(\\vec{r}_2-\\vec{r}_1)\\times(\\vec{r}_3-\\vec{r}_1) = 1$',
     ],
     correctOptionIndex: 0,
     explanation:
-      'For v(t) = (t-1)^2, v(1) = 0 but the average velocity is (1/2)∫₀² (t-1)² dt = 1/3 ≠ 0.',
+      'The scalar triple product of $\\vec{r}-\\vec{r}_1$ with the two edge vectors vanishes iff $\\vec{r}-\\vec{r}_1$ lies in the plane they span.',
   },
   {
-    id: 'kin-q10',
-    chapterId: 'kinematics-1d',
-    topicId: 'displacement-distance-speed-velocity',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'If a particle has zero speed at an instant, must its velocity be zero? Is the converse true?',
-    options: [
-      'Both are true: in 1D, speed = |velocity|, so they vanish together.',
-      'Zero speed does not imply zero velocity, but zero velocity implies zero speed.',
-      'Zero velocity does not imply zero speed, but zero speed implies zero velocity.',
-      'Neither statement is true in 1D.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Speed is defined as |v|, so speed = 0 ⇔ |v| = 0 ⇔ v = 0. Both implications hold.',
-  },
-
-  // ─────────────────────────────────────────────────────────────
-  // Average vs. instantaneous quantities
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q11',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Must the average velocity over an interval equal the instantaneous velocity at some point inside the interval?',
-    options: [
-      'Yes — by the mean value theorem, provided position is differentiable.',
-      'No — this can fail for any accelerated motion.',
-      'Only if the acceleration is zero.',
-      'Only if the velocity never changes sign.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The MVT applied to x(t) guarantees a point where v equals the average velocity.',
-  },
-  {
-    id: 'kin-q12',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'If the average velocity over every interval of a fixed duration T is the same constant, what can you conclude about v(t)?',
-    options: [
-      'v(t) is periodic with period T but need not be constant.',
-      'v(t) must be constant.',
-      'v(t) must be linear in t.',
-      'v(t) must be zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'x(t+T) - x(t) = cT gives v(t+T) = v(t); v is T-periodic. It is constant only if this holds for all T.',
-  },
-  {
-    id: 'kin-q13',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
+    id: 'vect-q14',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
     difficulty: 'Medium',
     type: 'true-false',
     prompt:
-      'True or False: The average velocity over [t1, t2] always equals the instantaneous velocity at the midpoint (t1 + t2)/2.',
+      'True or False: Four points $A,B,C,D$ are coplanar iff $(\\vec{B}-\\vec{A})\\cdot[(\\vec{C}-\\vec{A})\\times(\\vec{D}-\\vec{A})]=0$.',
     options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — the triple product is the (signed) volume of the parallelepiped they span; zero volume means coplanarity.',
+  },
+  {
+    id: 'vect-q15',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'The shortest distance from a point $P$ to a line through $Q$ with unit direction $\\hat{d}$ is:',
+    options: [
+      '$\\big|(\\vec{P}-\\vec{Q})\\times\\hat{d}\\big|$',
+      '$\\big|(\\vec{P}-\\vec{Q})\\cdot\\hat{d}\\big|$',
+      '$\\big|(\\vec{P}-\\vec{Q})\\big|$',
+      '$\\big|\\vec{P}\\times\\vec{Q}\\big|$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The cross product isolates the perpendicular component; its magnitude equals the perpendicular distance.',
+  },
+  {
+    id: 'vect-q16',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'The shortest distance between two skew lines with unit directions $\\hat{d}_1,\\hat{d}_2$ and points $\\vec{r}_1,\\vec{r}_2$ on them is:',
+    options: [
+      '$\\big|(\\vec{r}_1-\\vec{r}_2)\\cdot(\\hat{d}_1\\times\\hat{d}_2)\\big|$',
+      '$\\big|(\\vec{r}_1-\\vec{r}_2)\\times(\\hat{d}_1\\times\\hat{d}_2)\\big|$',
+      '$\\big|(\\vec{r}_1-\\vec{r}_2)\\big|$',
+      '$\\big|(\\vec{r}_1-\\vec{r}_2)\\cdot\\hat{d}_1\\big|$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The common perpendicular is along $\\hat{d}_1\\times\\hat{d}_2$; the distance is the projection of $\\vec{r}_1-\\vec{r}_2$ onto it.',
+  },
+  {
+    id: 'vect-q17',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'If $|\\vec{A}\\times\\vec{B}| = \\vec{A}\\cdot\\vec{B}$ and $\\vec{A}\\cdot\\vec{B}>0$, what is the angle between the vectors?',
+    options: ['30°', '45°', '60°', '90°'],
     correctOptionIndex: 1,
     explanation:
-      'False in general; it is true only for constant acceleration, where v(t) is linear.',
+      '$AB\\sin\\theta = AB\\cos\\theta$ gives $\\tan\\theta=1$, and $\\cos\\theta>0$ selects $\\theta=45^\\circ$.',
   },
   {
-    id: 'kin-q14',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Can instantaneous velocity be zero at some instant while the average velocity over a surrounding interval is non-zero?',
-    options: [
-      'Yes — e.g. v(t) = (t - 1)^2 has v(1) = 0 but a non-zero average over [0, 2].',
-      'No — zero instantaneous velocity forces the average to be zero.',
-      'Only if the acceleration is also zero.',
-      'Only if the particle never moves.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A momentary rest does not force the time average of v to vanish; see v(t) = (t-1)^2.',
-  },
-  {
-    id: 'kin-q15',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
+    id: 'vect-q18',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
     difficulty: 'Hard',
-    type: 'conceptual',
+    type: 'multiple-choice',
     prompt:
-      'Is the time-average of instantaneous velocity equal to the average velocity? Is the distance-average of velocity equal to the average velocity?',
+      'What is the area of a parallelogram whose diagonals are $\\vec{D}_1$ and $\\vec{D}_2$?',
     options: [
-      'The time average equals average velocity; the distance average generally does not.',
-      'Both averages equal the average velocity.',
-      'Neither average equals the average velocity.',
-      'The distance average equals average velocity; the time average does not.',
+      '$\\tfrac12|\\vec{D}_1\\times\\vec{D}_2|$',
+      '$|\\vec{D}_1\\times\\vec{D}_2|$',
+      '$\\tfrac14|\\vec{D}_1\\times\\vec{D}_2|$',
+      '$|\\vec{D}_1\\cdot\\vec{D}_2|$',
     ],
     correctOptionIndex: 0,
     explanation:
-      'The time average of v is (1/Δt)∫v dt = Δx/Δt by definition; the distance average is (1/s)∫v ds, a different weighting.',
+      'The sides are $(\\vec{D}_1\\pm\\vec{D}_2)/2$, and the area is half the magnitude of the diagonal cross product.',
   },
   {
-    id: 'kin-q16',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
-    difficulty: 'Medium',
+    id: 'vect-q19',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
+    difficulty: 'Hard',
     type: 'true-false',
     prompt:
-      'True or False: For constant acceleration, the average velocity over any interval equals the instantaneous velocity at the midpoint of the interval.',
+      'True or False: $\\vec{A}\\times(\\vec{B}\\times\\vec{C}) + \\vec{B}\\times(\\vec{C}\\times\\vec{A}) + \\vec{C}\\times(\\vec{A}\\times\\vec{B}) = \\vec{0}$ (the Jacobi identity).',
     options: ['True', 'False'],
     correctOptionIndex: 0,
     explanation:
-      'True: v(t) = v0 + at is linear, so its mean over [t1, t2] is its value at the midpoint.',
+      'True — applying BAC–CAB to each triple makes all terms cancel in pairs.',
   },
   {
-    id: 'kin-q17',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
+    id: 'vect-q20',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
     difficulty: 'Hard',
-    type: 'conceptual',
+    type: 'multiple-choice',
     prompt:
-      'Can the average velocity over an interval be zero while the particle never comes to rest (with continuous v)?',
+      'Why does $(\\vec{A}\\times\\vec{B})\\times\\vec{C}$ lie in the plane of $\\vec{A}$ and $\\vec{B}$, even though cross products are "perpendicular"?',
     options: [
-      'No — continuity forces v to pass through zero somewhere in the interval.',
-      'Yes — e.g. v(t) = (t - 1)^2 has zero average velocity on [0, 2].',
-      'Yes, whenever the acceleration is constant.',
-      'Only if the particle travels in the negative direction.',
+      'Because $(\\vec{A}\\times\\vec{B})\\times\\vec{C} = \\vec{B}(\\vec{A}\\cdot\\vec{C}) - \\vec{A}(\\vec{B}\\cdot\\vec{C})$, a linear combination of $\\vec{A}$ and $\\vec{B}$.',
+      'Because the cross product is commutative.',
+      'Because all vectors lie in one plane.',
+      'Because $\\vec{C}$ is perpendicular to $\\vec{A}\\times\\vec{B}$.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'If ∫v dt = 0 with v continuous, the mean value theorem gives a point where v = 0.',
-  },
-  {
-    id: 'kin-q18',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt: 'Under what condition is the average speed over an interval zero?',
-    options: [
-      'Only if the particle never moves (distance = 0).',
-      'Whenever the average velocity is zero.',
-      'Whenever the particle reverses direction.',
-      'Whenever the acceleration is zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Average speed = (total distance)/(time) ≥ 0, and it vanishes only if the total distance is zero.',
-  },
-  {
-    id: 'kin-q19',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt:
-      'A particle moves with constant speed c in one dimension and completes a round trip. What are its average velocity and average speed?',
-    options: [
-      'Average velocity 0; average speed c',
-      'Average velocity c; average speed c',
-      'Average velocity 0; average speed 0',
-      'Average velocity c; average speed 0',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The net displacement is zero, so the average velocity is zero, but the average speed is c.',
-  },
-  {
-    id: 'kin-q20',
-    chapterId: 'kinematics-1d',
-    topicId: 'average-vs-instantaneous',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'When do average velocity and average speed have different magnitudes over the same interval?',
-    options: [
-      'Whenever the particle reverses direction; they coincide for unidirectional motion.',
-      'Always, since velocity and speed are different quantities.',
-      'Only when the acceleration is constant.',
-      'Never; they always have the same magnitude.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Direction reversals make the path length exceed |Δx|; for unidirectional motion the two coincide.',
+      'The BAC–CAB identity expresses the triple product as a linear combination of $\\vec{A}$ and $\\vec{B}$; the "perpendicularity" refers to each factor of the inner cross product, not the outer result.',
   },
 
   // ─────────────────────────────────────────────────────────────
-  // Acceleration: concept and sign
+  // Vector calculus
   // ─────────────────────────────────────────────────────────────
   {
-    id: 'kin-q21',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
+    id: 'vect-q21',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt: 'If $\\nabla\\cdot\\vec{F}=0$ everywhere, does it follow that $\\vec{F}$ is constant?',
+    options: [
+      'No — e.g. $\\vec{F}=(y,-x,0)$ has $\\nabla\\cdot\\vec{F}=0$ but varies with position.',
+      'Yes — divergence-free fields are constant.',
+      'Only if $\\vec{F}$ is also irrotational.',
+      'Only in one dimension.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Solenoidal fields need not be uniform; $\\vec{F}=(y,-x,0)$ is a standard counterexample.',
+  },
+  {
+    id: 'vect-q22',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'For $\\vec{r}=x\\hat{i}+y\\hat{j}+z\\hat{k}$, what are $\\nabla\\cdot\\vec{r}$ and $\\nabla\\times\\vec{r}$?',
+    options: [
+      '$3$ and $\\vec{0}$',
+      '$1$ and $\\vec{0}$',
+      '$3$ and $2\\vec{r}$',
+      '$0$ and $\\vec{0}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Each Cartesian component contributes one to the divergence, giving $3$; the curl of a radial field vanishes.',
+  },
+  {
+    id: 'vect-q23',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: $\\nabla\\times(\\nabla\\phi)=\\vec{0}$ for any twice-differentiable scalar field $\\phi$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — equality of mixed partials (Clairaut) makes every component of the curl vanish identically.',
+  },
+  {
+    id: 'vect-q24',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'Which field has $\\nabla\\times\\vec{F}=\\vec{0}$ away from a singular line but is not conservative there?',
+    options: [
+      'The magnetic field of a long straight wire, $\\vec{B}\\propto \\hat{\\phi}/\\rho$.',
+      'A uniform field $\\vec{F}=\\vec{F}_0$.',
+      'The gravitational field $\\vec{g}=-GM\\hat{r}/r^2$.',
+      '$\\vec{F}=\\vec{r}$.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The azimuthal field $\\hat{\\phi}/\\rho$ is irrotational away from the wire, but its loop integral is non-zero ($\\mu_0 I$), so it is not a gradient.',
+  },
+  {
+    id: 'vect-q25',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'For $\\vec{F}=\\vec{A}\\times\\vec{r}$ with $\\vec{A}$ constant, what are $\\nabla\\cdot\\vec{F}$ and $\\nabla\\times\\vec{F}$?',
+    options: [
+      '$0$ and $2\\vec{A}$',
+      '$3$ and $\\vec{0}$',
+      '$0$ and $\\vec{0}$',
+      '$2\\vec{A}$ and $\\vec{0}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Because $\\vec{A}$ is constant and $\\vec{r}$ has $\\nabla\\cdot\\vec{r}=3$, $\\nabla\\times\\vec{r}=\\vec{0}$, one obtains $\\nabla\\cdot(\\vec{A}\\times\\vec{r})=0$ and $\\nabla\\times(\\vec{A}\\times\\vec{r})=2\\vec{A}$.',
+  },
+  {
+    id: 'vect-q26',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'true-false',
+    prompt:
+      'True or False: $\\nabla\\cdot(\\vec{A}\\times\\vec{B}) = \\vec{B}\\cdot(\\nabla\\times\\vec{A}) - \\vec{A}\\cdot(\\nabla\\times\\vec{B})$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — this is the standard vector identity for the divergence of a cross product.',
+  },
+  {
+    id: 'vect-q27',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The gravitational field $\\vec{g}=-GM\\hat{r}/r^2$ is conservative.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — $\\vec{g}=-\\nabla\\Phi$ with $\\Phi=-GM/r$, so the line integral is path-independent.',
+  },
+  {
+    id: 'vect-q28',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'numerical',
+    prompt:
+      'Compute $\\oint \\vec{F}\\cdot d\\vec{r}$ on the unit circle for $\\vec{F}=\\dfrac{(-y,\\,x,\\,0)}{x^2+y^2}$.',
+    numericAnswer: 6.283,
+    numericTolerance: 0.02,
+    unit: '',
+    explanation:
+      'Parametrize by $\\theta$: $\\vec{F}\\cdot d\\vec{r}=d\\theta$, so the integral is $\\int_0^{2\\pi}d\\theta = 2\\pi \\approx 6.283$.',
+  },
+  {
+    id: 'vect-q29',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'numerical',
+    prompt:
+      'Compute the directional derivative of $\\phi(x,y,z)=x^2 y + y z^3$ at $(1,2,0)$ in the direction of $(1,-1,1)$. Give the numerical value.',
+    numericAnswer: 1.732,
+    numericTolerance: 0.02,
+    unit: '',
+    explanation:
+      '$\\nabla\\phi = (2xy,\\,x^2+z^3,\\,3yz^2)$; at $(1,2,0)$ this is $(4,1,0)$. The unit direction is $(1,-1,1)/\\sqrt 3$, so the directional derivative is $(4-1)/\\sqrt 3 = \\sqrt 3 \\approx 1.732$.',
+  },
+  {
+    id: 'vect-q30',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'If $\\nabla\\times\\vec{F}=\\vec{0}$ and $\\nabla\\cdot\\vec{F}=0$ in a simply-connected region, what follows?',
+    options: [
+      '$\\vec{F}=-\\nabla\\phi$ with $\\nabla^2\\phi=0$.',
+      '$\\vec{F}$ is constant.',
+      '$\\vec{F}=\\vec{0}$.',
+      '$\\vec{F}=\\nabla\\times\\vec{A}$ with $\\nabla^2\\vec{A}=0$ and $\\nabla\\cdot\\vec{A}\\neq 0$.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Zero curl on a simply-connected domain gives $\\vec{F}=-\\nabla\\phi$; then zero divergence gives $\\nabla^2\\phi=0$ (harmonic).',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Kinematics (vector form)
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q31',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: A particle moving with constant speed along a curved path has acceleration perpendicular to its velocity at every instant.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — constant speed means $d|\\vec{v}|^2/dt=0$, so $\\vec{v}\\cdot\\vec{a}=0$.',
+  },
+  {
+    id: 'vect-q32',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
     difficulty: 'Easy',
     type: 'conceptual',
     prompt:
-      'Can a particle have zero acceleration but non-zero velocity? Can it have zero velocity but non-zero acceleration?',
+      'Can a particle have zero velocity but non-zero acceleration? Zero acceleration but non-zero velocity?',
     options: [
-      'Both are possible (uniform motion; the top of a vertical throw).',
+      'Both are possible (top of a vertical throw; uniform motion).',
       'Only the first is possible.',
       'Only the second is possible.',
       'Neither is possible.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'Uniform motion has a = 0 with v ≠ 0; a ball at the top of its flight has v = 0 with a = -g.',
+      'Velocity and acceleration are independent; either can vanish while the other is non-zero.',
   },
   {
-    id: 'kin-q22',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
+    id: 'vect-q33',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
     difficulty: 'Medium',
     type: 'conceptual',
     prompt:
-      'Can a particle have negative acceleration and increasing speed?',
+      'If $\\vec{a}\\cdot\\vec{v}=0$ at all times, what can you conclude about the speed?',
     options: [
-      'Yes — e.g. v = -5 m/s with a = -2 m/s²: the speed grows from 5 to 7 m/s.',
-      'No — negative acceleration always slows the particle down.',
-      'Only if the velocity is positive.',
-      'Only if the acceleration is constant.',
+      'The speed is constant, so the "perpendicular acceleration increases speed" intuition is wrong.',
+      'The speed increases linearly with time.',
+      'The speed decreases linearly with time.',
+      'Nothing — perpendicular acceleration always increases speed.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'Speed increases whenever a and v have the same sign; with v < 0 and a < 0 the speed grows.',
+      '$\\vec{a}\\cdot\\vec{v}=0$ means the acceleration has no tangential component, so the speed $|\\vec{v}|$ is constant.',
   },
   {
-    id: 'kin-q23',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Can a particle have positive acceleration and decreasing speed?',
-    options: [
-      'Yes — e.g. v = -5 m/s with a = +2 m/s²: the speed falls from 5 to 3 m/s.',
-      'No — positive acceleration always speeds the particle up.',
-      'Only if the velocity is positive.',
-      'Only if the acceleration is changing.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'With v < 0 and a > 0 the acceleration opposes the motion, so the speed decreases.',
-  },
-  {
-    id: 'kin-q24',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'If the acceleration is zero at an instant, can the velocity be changing at that instant? Can the acceleration itself be changing?',
-    options: [
-      'The velocity is instantaneously unchanging, but the acceleration may itself be changing (jerk ≠ 0).',
-      'The velocity is changing, and the acceleration is constant.',
-      'Neither can change when a = 0.',
-      'The velocity is constant for all time.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'a = dv/dt = 0 means v has zero slope there; a can still vary because jerk = da/dt need not vanish.',
-  },
-  {
-    id: 'kin-q25',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'If a particle has positive acceleration at all times, must its speed always increase?',
-    options: [
-      'No — speed increases only when a and v have the same sign.',
-      'Yes — positive acceleration always means speeding up.',
-      'Yes, provided the velocity starts positive.',
-      'No, because positive acceleration always slows the particle down.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'If v < 0 while a > 0, the speed decreases even though the acceleration is positive.',
-  },
-  {
-    id: 'kin-q26',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Can a particle have acceleration that is always non-zero while its velocity never changes sign?',
-    options: [
-      'Yes — e.g. v(t) = e^t > 0 with a = e^t ≠ 0 for all t.',
-      'No — non-zero acceleration always forces v through zero.',
-      'Only if the acceleration is constant.',
-      'Only if the initial velocity is zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'v(t) = e^t is always positive and has non-zero derivative for every t.',
-  },
-  {
-    id: 'kin-q27',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'A particle moves with a = -kv (k > 0). Does it ever stop in finite time?',
-    options: [
-      'No — its velocity decays exponentially, approaching zero asymptotically.',
-      'Yes — it stops at t = 1/k.',
-      'Yes — it stops at t = 2v0/k.',
-      'It reverses direction at t = 1/k.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Solving dv/dt = -kv gives v(t) = v0 e^{-kt}, which is never zero at finite t.',
-  },
-  {
-    id: 'kin-q28',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
+    id: 'vect-q34',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
     difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'A particle moves with a = -k√v (k > 0, v ≥ 0). What happens?',
-    options: [
-      'It stops in finite time t = 2√v0/k and then stays at rest.',
-      'It approaches rest only asymptotically.',
-      'It reverses direction at t = 2√v0/k.',
-      'It speeds up because the acceleration is negative.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Solving dv/√v = -k dt gives √v = √v0 - kt/2, so v reaches zero at t = 2√v0/k; afterwards a = 0 and it stays at rest.',
-  },
-  {
-    id: 'kin-q29',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Among a = -kv, a = -kv² and a = -k√v, which lead to a stop in finite time? What is the general rule for a = -kvⁿ?',
-    options: [
-      'Only a = -k√v; in general a = -kvⁿ stops in finite time iff n < 1.',
-      'All three stop in finite time.',
-      'Only a = -kv²; in general a = -kvⁿ stops in finite time iff n > 1.',
-      'None of them stop in finite time.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Integrating dv/vⁿ gives a finite stop time only when n < 1; for n ≥ 1 the velocity reaches zero only asymptotically.',
-  },
-  {
-    id: 'kin-q30',
-    chapterId: 'kinematics-1d',
-    topicId: 'acceleration-concept-and-sign',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'If the acceleration is always perpendicular to the velocity, what can you conclude about one-dimensional motion?',
-    options: [
-      'In 1D this forces a = 0 whenever v ≠ 0, so the velocity is constant.',
-      'The particle must move in a circle.',
-      'The speed must increase.',
-      'The particle must reverse direction.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Perpendicularity in 1D means a·v = av = 0, hence a = 0 (if v ≠ 0); the motion is uniform.',
-  },
-
-  // ─────────────────────────────────────────────────────────────
-  // Motion graphs
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q31',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Easy',
-    type: 'multiple-choice',
-    prompt:
-      'What do the slopes of the x–t, v–t and a–t graphs represent, respectively?',
-    options: [
-      'Velocity, acceleration, and jerk',
-      'Acceleration, velocity, and jerk',
-      'Velocity, jerk, and acceleration',
-      'Displacement, velocity, and acceleration',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Slope of x–t is dx/dt = v; slope of v–t is dv/dt = a; slope of a–t is da/dt = jerk.',
-  },
-  {
-    id: 'kin-q32',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt: 'Can an x–t graph be a vertical line? What would that imply physically?',
-    options: [
-      'No — it would mean two positions at the same time, i.e. infinite velocity.',
-      'Yes — it describes constant acceleration.',
-      'Yes — it describes a particle at rest.',
-      'No — it would mean zero acceleration.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A vertical line has infinite slope, implying infinite velocity, which is unphysical.',
-  },
-  {
-    id: 'kin-q33',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'On a v–t graph, what does the area under the curve represent? How do you find the total distance?',
-    options: [
-      'Displacement is the net signed area; distance is the sum of the absolute areas.',
-      'Both displacement and distance are the net signed area.',
-      'Area gives acceleration; distance is the slope.',
-      'Area gives distance; displacement is the slope.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      '∫v dt is the signed displacement; summing |area| over subintervals gives the total path length.',
-  },
-  {
-    id: 'kin-q34',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Two particles have x–t graphs that intersect. What does this mean? What does it mean if their v–t graphs intersect?',
-    options: [
-      'Intersecting x–t graphs mean they meet; intersecting v–t graphs mean only that their velocities coincide.',
-      'Both intersections mean the particles meet.',
-      'Both intersections mean the particles have the same velocity.',
-      'Intersecting x–t graphs mean equal velocities; v–t intersections mean they meet.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'x–t intersection means the same position at the same time; v–t intersection means only equal velocity, not equal position.',
-  },
-  {
-    id: 'kin-q35',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Can a particle reverse direction without its velocity being zero at any instant? (Assume v is continuous.)',
-    options: [
-      'No — a continuous velocity must pass through zero to change sign.',
-      'Yes — reversal can occur without v vanishing.',
-      'Only if the acceleration is discontinuous.',
-      'Only in free fall.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A sign change of a continuous function requires it to vanish somewhere (intermediate value theorem).',
-  },
-  {
-    id: 'kin-q36',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can an x–t graph have an always-positive slope while the acceleration changes sign?',
-    options: [
-      'Yes — e.g. x(t) = t + sin t on (0, π): the slope is always positive but the concavity changes.',
-      'No — positive slope forces positive acceleration.',
-      'No — the acceleration must have the same sign as the velocity.',
-      'Only if the velocity is constant.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'x(t) = t + sin t has v = 1 + cos t ≥ 0 but a = -sin t, which changes sign at t = π.',
-  },
-  {
-    id: 'kin-q37',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Can a v–t graph cross the time axis without the particle reversing direction?',
-    options: [
-      'No — crossing the axis means v changes sign, i.e. the direction reverses.',
-      'Yes — crossing the axis only changes the acceleration.',
-      'Yes — if the acceleration is constant.',
-      'Only when the particle is in free fall.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The time axis is v = 0; crossing it means v goes from positive to negative (or vice versa), a reversal.',
-  },
-  {
-    id: 'kin-q38',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can an x–t graph be a parabola opening upward while the particle moves in the negative direction during some interval?',
-    options: [
-      'Yes — e.g. x(t) = t² - 4t on [0, 2): the parabola opens upward while v = 2t - 4 < 0.',
-      'No — an upward parabola always means positive velocity.',
-      'No — a negative velocity gives a downward parabola.',
-      'Only if the acceleration changes sign.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The parabola x = t² - 4t has positive curvature (a = +2) but negative slope until t = 2.',
-  },
-  {
-    id: 'kin-q39',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt:
-      'Given a v–t graph, how do you determine whether the displacement is positive or negative, and how do you find the total distance?',
-    options: [
-      'Displacement is the net signed area; distance is the sum of the absolute areas.',
-      'Displacement is the absolute area; distance is the net signed area.',
-      'Both are found from the slope of the graph.',
-      'Displacement is the slope; distance is the area.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Areas above the axis count positively and below count negatively for displacement; |area| counts for distance.',
-  },
-  {
-    id: 'kin-q40',
-    chapterId: 'kinematics-1d',
-    topicId: 'motion-graphs',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'If the v–t graph is a semicircle, describe the nature of the motion. Is the acceleration constant?',
-    options: [
-      'Speed rises and then falls (or vice versa) as the slope varies; the acceleration is not constant.',
-      'The acceleration is constant because the graph is smooth.',
-      'The particle moves with constant speed.',
-      'The particle reverses direction at the centre of the semicircle.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'On a semicircle the slope changes continuously, so a = dv/dt varies; the speed rises to a maximum and then decreases.',
-  },
-
-  // ─────────────────────────────────────────────────────────────
-  // Constant acceleration
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q41',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt: 'What assumption is required to derive v = v0 + at?',
-    options: [
-      'Constant acceleration',
-      'Constant velocity',
-      'Zero initial position',
-      'Constant jerk',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Integrating dv/dt = a with constant a gives v = v0 + at.',
-  },
-  {
-    id: 'kin-q42',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Easy',
-    type: 'conceptual',
-    prompt:
-      'What assumption is required to derive x = x0 + v0 t + ½ a t²?',
-    options: [
-      'Constant acceleration',
-      'Constant velocity',
-      'Zero initial velocity',
-      'Constant jerk',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Integrating v = v0 + at with constant a gives x = x0 + v0 t + ½ a t².',
-  },
-  {
-    id: 'kin-q43',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt: 'Is v² = v0² + 2a(x - x0) valid for non-constant acceleration?',
-    options: [
-      'No — it is valid only for constant acceleration.',
-      'Yes — it holds for any acceleration.',
-      'Yes, provided the acceleration is positive.',
-      'Only if the velocity never changes sign.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The identity follows from a = constant; in general a(x - x0) must be replaced by ∫a dx.',
-  },
-  {
-    id: 'kin-q44',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Medium',
-    type: 'multiple-choice',
-    prompt:
-      'A particle starts from rest with constant acceleration. What is the ratio of the distances traveled in successive equal time intervals?',
-    options: ['1 : 3 : 5 : 7 : …', '1 : 2 : 3 : 4 : …', '1 : 4 : 9 : 16 : …', '1 : 1 : 1 : 1 : …'],
-    correctOptionIndex: 0,
-    explanation:
-      'The nth interval distance is ½aT²(2n - 1), giving the odd-number ratio 1 : 3 : 5 : …',
-  },
-  {
-    id: 'kin-q45',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'A particle starting from rest with constant acceleration travels distance s in time t. How far does it travel in 2t and in 3t?',
-    options: [
-      '4s in 2t and 9s in 3t; in general n²s in nt.',
-      '2s in 2t and 3s in 3t.',
-      '2s in 2t and 4s in 3t.',
-      's in 2t and s in 3t.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'From rest, x ∝ t², so the distance scales as the square of the elapsed time.',
-  },
-  {
-    id: 'kin-q46',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Medium',
-    type: 'multiple-choice',
-    prompt:
-      'A particle with constant acceleration has velocity v1 at position x1 and v2 at x2. What is its acceleration?',
-    options: [
-      '(v2² - v1²) / [2(x2 - x1)]',
-      '(v2 - v1) / (x2 - x1)',
-      '(v2² + v1²) / [2(x2 - x1)]',
-      '(v2 - v1)² / [2(x2 - x1)]',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Rearranging v2² = v1² + 2a(x2 - x1) gives a = (v2² - v1²)/[2(x2 - x1)].',
-  },
-  {
-    id: 'kin-q47',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can a particle with non-zero constant acceleration have zero velocity at two different times?',
-    options: [
-      'No — v = v0 + at crosses zero at most once.',
-      'Yes — it passes through zero twice.',
-      'Yes, if it reverses direction twice.',
-      'Only if the acceleration is negative.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A linear function v(t) has at most one root (unless a = 0 and v0 = 0).',
-  },
-  {
-    id: 'kin-q48',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Medium',
     type: 'true-false',
     prompt:
-      'True or False: For constant acceleration, the average velocity over any interval equals (v1 + v2)/2.',
+      'True or False: A particle moving with $\\vec{a}=-k\\vec{v}$ never comes to rest in finite time.',
     options: ['True', 'False'],
     correctOptionIndex: 0,
     explanation:
-      'True because v(t) is linear; for non-constant acceleration the average is generally different.',
+      'True — $\\vec{v}(t)=\\vec{v}_0 e^{-kt}$ approaches zero only asymptotically.',
   },
   {
-    id: 'kin-q49',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Medium',
-    type: 'multiple-choice',
-    prompt:
-      'A ball is thrown vertically upward with speed u and returns to the thrower. What are the displacement, total distance, and time of flight?',
-    options: [
-      'Displacement 0; distance u²/g; time 2u/g',
-      'Displacement u²/g; distance u²/g; time u/g',
-      'Displacement 0; distance 2u²/g; time u/g',
-      'Displacement 0; distance u²/(2g); time 2u/g',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The ball returns to its starting point (displacement 0); it rises u²/(2g) and falls the same, so the distance is u²/g, and the flight time is 2u/g.',
-  },
-  {
-    id: 'kin-q50',
-    chapterId: 'kinematics-1d',
-    topicId: 'constant-acceleration',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Can a particle with constant acceleration have an x–t graph that is a straight line?',
-    options: [
-      'Only when a = 0 (uniform motion).',
-      'Yes, for any constant acceleration.',
-      'Only when the acceleration is negative.',
-      'Only when the initial velocity is zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A straight x–t line means constant velocity, which requires zero acceleration.',
-  },
-
-  // ─────────────────────────────────────────────────────────────
-  // Free fall
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q51',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
+    id: 'vect-q35',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
     difficulty: 'Easy',
     type: 'conceptual',
     prompt:
-      'At the highest point of a vertical throw, what are the velocity and acceleration?',
+      'In projectile motion, what is true at the highest point of the trajectory?',
     options: [
-      'v = 0 but a = -g',
-      'Both v and a are zero',
-      'v = 0 and a = 0',
-      'v is maximum and a = -g',
+      'The velocity and acceleration are perpendicular.',
+      'The velocity and acceleration are parallel.',
+      'The acceleration is zero.',
+      'The velocity is zero.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'The velocity vanishes momentarily at the top, but gravity continues to act, so a = -g.',
+      'At the top the velocity is horizontal while gravity acts vertically, so they are perpendicular. (The vertical velocity component is momentarily zero, not the whole velocity.)',
   },
   {
-    id: 'kin-q52',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Two balls are dropped from the same height, one after the other. How does the distance between them behave?',
-    options: [
-      'It increases linearly with time after the second is released.',
-      'It stays constant.',
-      'It decreases linearly with time.',
-      'It increases quadratically with time.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Both have the same acceleration g, so their relative velocity is constant once both are falling; the separation grows linearly.',
-  },
-  {
-    id: 'kin-q53',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Medium',
-    type: 'numerical',
-    prompt:
-      'A ball is thrown vertically upward with speed 20 m/s. At what height (in metres, take g = 10 m/s²) is its speed half the initial speed?',
-    numericAnswer: 15,
-    numericTolerance: 0.2,
-    unit: 'm',
-    explanation:
-      'Using v² = u² - 2gh with v = u/2: h = 3u²/(8g) = 3(400)/(80) = 15 m.',
-  },
-  {
-    id: 'kin-q54',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Medium',
-    type: 'numerical',
-    prompt:
-      'A ball thrown vertically upward returns to the thrower after 4 s. What is the maximum height reached (in metres, take g = 10 m/s²)?',
-    numericAnswer: 20,
-    numericTolerance: 0.2,
-    unit: 'm',
-    explanation:
-      'T = 2u/g gives u = 20 m/s, so H = u²/(2g) = 400/20 = 20 m (equivalently H = gT²/8).',
-  },
-  {
-    id: 'kin-q55',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'A ball is dropped from height h. Simultaneously, another ball is thrown downward with speed u from the same height. Which reaches the ground first?',
-    options: [
-      'The ball thrown downward.',
-      'The dropped ball.',
-      'They arrive together.',
-      'It depends on the value of h.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The thrown ball has a larger initial downward velocity and the same acceleration, so it lands first.',
-  },
-  {
-    id: 'kin-q56',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can two objects in free fall have the same velocity at some instant but different positions?',
-    options: [
-      'Yes — two balls released simultaneously from different heights have the same velocity -gt but different positions.',
-      'No — equal velocities imply equal positions.',
-      'Only if they are released from the same height.',
-      'Only if one is thrown upward.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Velocity depends only on the elapsed fall time, not on the starting height, so equal velocities do not imply equal positions.',
-  },
-  {
-    id: 'kin-q57',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'A ball is thrown upward from a moving elevator. How is its motion described in the elevator frame and in the ground frame?',
-    options: [
-      'Ordinary free fall in the elevator frame; in the ground frame its initial velocity is the vector sum of the elevator and throw velocities.',
-      'Ordinary free fall in both frames with the same initial velocity.',
-      'It moves with constant velocity in the ground frame.',
-      'It falls straight down in both frames.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The elevator frame is inertial if it moves uniformly; a Galilean boost adds the elevator velocity to the initial velocity in the ground frame.',
-  },
-  {
-    id: 'kin-q58',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'With air resistance, is the time to go up equal to the time to come down for a vertically thrown ball?',
-    options: [
-      'No — the upward trip is shorter than the downward trip.',
-      'Yes — the times are always equal.',
-      'No — the upward trip is longer.',
-      'Only if the drag is linear in v.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Going up, drag and gravity both act downward (large deceleration); coming down, drag opposes gravity (smaller acceleration), so the descent takes longer.',
-  },
-  {
-    id: 'kin-q59',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt: 'Can an object in free fall have zero speed for a finite duration?',
-    options: [
-      'No — the speed vanishes only at an isolated instant (the top of the motion).',
-      'Yes — at the top of the trajectory.',
-      'Yes — if it is dropped from rest.',
-      'Only if the acceleration is zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'At the top v = 0 for a single instant; gravity immediately changes it, so the rest is momentary.',
-  },
-  {
-    id: 'kin-q60',
-    chapterId: 'kinematics-1d',
-    topicId: 'free-fall',
+    id: 'vect-q36',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
     difficulty: 'Medium',
     type: 'multiple-choice',
     prompt:
-      'A ball is thrown vertically upward. At the highest point, what are the velocity, acceleration, and jerk?',
+      'Which pair of projection angles (same initial speed, level ground) gives the same horizontal range?',
     options: [
-      'v = 0, a = -g, jerk = 0',
-      'v = 0, a = 0, jerk = -g',
-      'v = maximum, a = 0, jerk = 0',
-      'v = 0, a = -g, jerk = -g',
+      '$\\theta$ and $90^\\circ-\\theta$',
+      '$\\theta$ and $\\theta+45^\\circ$',
+      '$\\theta$ and $2\\theta$',
+      'Only $45^\\circ$ gives the maximum range, so no other pair exists.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'The velocity vanishes at the top, the acceleration is the constant -g, and its derivative (jerk) is zero.',
+      'The range $R = v_0^2\\sin(2\\theta)/g$ is symmetric under $\\theta\\mapsto 90^\\circ-\\theta$.',
+  },
+  {
+    id: 'vect-q37',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'Which three vectors determine the plane of projectile motion in a uniform gravitational field?',
+    options: [
+      'The initial position $\\vec{r}_0$, the initial velocity $\\vec{v}_0$, and the gravitational acceleration $\\vec{g}$.',
+      'Only $\\vec{v}_0$ and $\\vec{g}$.',
+      'Only $\\vec{r}_0$ and $\\vec{g}$.',
+      'The initial position, velocity, and the total flight time.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The motion stays in the plane spanned by $\\vec{v}_0$ and $\\vec{g}$ through the initial position; all three vectors determine that plane.',
+  },
+  {
+    id: 'vect-q38',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'What is the acceleration of a particle in circular motion in terms of position $\\vec{r}$, angular velocity $\\vec{\\omega}$, and angular acceleration $\\vec{\\alpha}$?',
+    options: [
+      '$\\vec{a} = -\\omega^2\\vec{r} + \\vec{\\alpha}\\times\\vec{r}$ (for motion in a fixed plane through the origin).',
+      '$\\vec{a} = \\vec{\\omega}\\times(\\vec{\\omega}\\times\\vec{r})$ only.',
+      '$\\vec{a} = \\vec{\\alpha}\\times\\vec{r}$ only.',
+      '$\\vec{a} = \\vec{\\omega}\\cdot\\vec{r}$.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'For planar motion with $\\vec{\\omega}\\perp\\vec{r}$, $\\vec{\\omega}\\times(\\vec{\\omega}\\times\\vec{r})=-\\omega^2\\vec{r}$; adding $\\vec{\\alpha}\\times\\vec{r}$ gives the tangential term.',
+  },
+  {
+    id: 'vect-q39',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'A particle moves on a circle with constant speed. Which statements about $\\vec{v}$, $\\vec{\\omega}$, and $\\vec{a}$ are correct?',
+    options: [
+      '$\\vec{v}\\perp\\vec{\\omega}$, $\\vec{a}\\perp\\vec{v}$, and $\\vec{a}$ points toward the center.',
+      '$\\vec{v}\\parallel\\vec{\\omega}$ and $\\vec{a}\\parallel\\vec{v}$.',
+      '$\\vec{v}\\perp\\vec{\\omega}$ and $\\vec{a}$ points away from the center.',
+      'All three vectors are parallel.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      '$\\vec{v}=\\vec{\\omega}\\times\\vec{r}$ is perpendicular to $\\vec{\\omega}$; constant speed means $\\vec{a}\\perp\\vec{v}$, and the acceleration is centripetal.',
+  },
+  {
+    id: 'vect-q40',
+    chapterId: 'vectors',
+    topicId: 'kinematics-vectors',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'A particle has $\\vec{v}=v_0\\hat{t}$ with $v_0$ constant. Does this imply a straight line? Where does the argument fail?',
+    options: [
+      'It does imply a straight line, since $\\hat{t}$ is constant when the speed is constant. The argument fails if the speed is not constant.',
+      'It does not imply a straight line, because $\\hat{t}$ always rotates.',
+      'It implies a circle, because $\\hat{t}$ is perpendicular to $\\vec{v}$.',
+      'Nothing can be concluded without knowing the acceleration.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'A constant vector $\\vec{v}$ integrates to $\\vec{r}=\\vec{r}_0+\\vec{v}t$, a straight line. If $v_0$ were not constant, $\\hat{t}$ could rotate and the path could curve.',
   },
 
   // ─────────────────────────────────────────────────────────────
-  // Calculus-based kinematics
+  // Dynamics
   // ─────────────────────────────────────────────────────────────
   {
-    id: 'kin-q61',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Medium',
-    type: 'multiple-choice',
-    prompt:
-      'For x(t) = t³ - 6t² + 9t, at which times is the particle at rest?',
-    options: [
-      't = 1 s and t = 3 s',
-      't = 0 s and t = 3 s',
-      't = 2 s only',
-      't = 1 s only',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'v = 3t² - 12t + 9 = 3(t - 1)(t - 3), so v = 0 at t = 1 s and t = 3 s.',
-  },
-  {
-    id: 'kin-q62',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Hard',
-    type: 'numerical',
-    prompt:
-      'For x(t) = t³ - 6t² + 9t (SI units), find the total distance traveled from t = 0 to t = 4 s (in metres).',
-    numericAnswer: 12,
-    numericTolerance: 0.1,
-    unit: 'm',
-    explanation:
-      'x(0) = 0, x(1) = 4, x(3) = 0, x(4) = 4. Distance = 4 + 4 + 4 = 12 m.',
-  },
-  {
-    id: 'kin-q63',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Given v(t), how do you find the displacement and the distance traveled?',
-    options: [
-      'Displacement = ∫v dt; distance = ∫|v| dt',
-      'Both are ∫v dt',
-      'Displacement = ∫|v| dt; distance = ∫v dt',
-      'Displacement = dv/dt; distance = ∫v dt',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The signed integral gives displacement; integrating |v| accounts for reversals and gives the path length.',
-  },
-  {
-    id: 'kin-q64',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Given a(t), what information is needed to determine x(t) uniquely?',
-    options: [
-      'The initial velocity v(0) and the initial position x(0).',
-      'Only the initial position x(0).',
-      'Only the initial velocity v(0).',
-      'No further information is needed.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Two integrations introduce two constants of integration, fixed by v(0) and x(0).',
-  },
-  {
-    id: 'kin-q65',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Hard',
-    type: 'multiple-choice',
-    prompt:
-      'For v(t) = sin t on [0, 2π], what are the displacement and the distance traveled?',
-    options: [
-      'Displacement 0; distance 4',
-      'Displacement 4; distance 4',
-      'Displacement 0; distance 0',
-      'Displacement 2; distance 4',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      '∫₀^{2π} sin t dt = 0, while ∫₀^{2π} |sin t| dt = 4.',
-  },
-  {
-    id: 'kin-q66',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Medium',
-    type: 'multiple-choice',
-    prompt:
-      'A particle has velocity v(t) = 3t² - 12t + 9. At which times does it reverse direction?',
-    options: [
-      't = 1 s and t = 3 s',
-      't = 2 s only',
-      't = 0 s and t = 2 s',
-      'It never reverses direction',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'v = 3(t - 1)(t - 3) changes sign at t = 1 s and t = 3 s.',
-  },
-  {
-    id: 'kin-q67',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
+    id: 'vect-q41',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
     difficulty: 'Hard',
     type: 'conceptual',
-    prompt: 'For x(t) = |t|, are the velocity and the acceleration defined at t = 0?',
+    prompt: 'Is $\\vec{F}=m\\vec{a}$ universally valid?',
     options: [
-      'Neither is defined at t = 0 (the acceleration is distributional there).',
-      'Both are defined and equal zero.',
-      'The velocity is defined but the acceleration is not.',
-      'The acceleration is defined but the velocity is not.',
+      'No — variable-mass systems need $\\vec{F}_{\\rm ext}+\\vec{u}_{\\rm rel}\\dot m=m\\dot{\\vec{v}}$, and relativistically $\\vec{F}=d\\vec{p}/dt$ with $\\vec{p}=\\gamma m_0\\vec{v}$.',
+      'Yes — it is exact in all regimes.',
+      'Only in special relativity.',
+      'Only for conservative forces.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'The left and right derivatives of |t| differ at 0, so v is undefined; a is then a delta function, not an ordinary function.',
+      '$\\vec{F}=m\\vec{a}$ holds in Newtonian mechanics for constant mass. Variable mass and relativistic cases require corrections.',
   },
   {
-    id: 'kin-q68',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can a particle have continuous velocity but discontinuous acceleration? Give an example.',
-    options: [
-      'Yes — e.g. x = t² for t < 0 and x = t³ for t ≥ 0 gives continuous v but a jumps at t = 0.',
-      'No — continuity of v forces continuity of a.',
-      'Yes, but only if v is constant.',
-      'Only if the particle is in free fall.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The piecewise example has v = 2t (t < 0) and 3t² (t ≥ 0), both → 0 at t = 0, while a jumps from 2 to 0.',
-  },
-  {
-    id: 'kin-q69',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt: 'If v(t) = 1/t, what happens as t → 0? Is this physically possible?',
-    options: [
-      'v → ∞ as t → 0, so the motion is unphysical.',
-      'v → 0 as t → 0, which is physically reasonable.',
-      'v remains finite, so there is no problem.',
-      'The particle comes to rest at t = 0.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A diverging velocity (and position x = ln t → -∞) is not physically realizable.',
-  },
-  {
-    id: 'kin-q70',
-    chapterId: 'kinematics-1d',
-    topicId: 'calculus-kinematics',
-    difficulty: 'Medium',
-    type: 'multiple-choice',
-    prompt:
-      'A particle starts from rest at x = 0 with a(t) = 2t. What are v(t) and x(t)?',
-    options: [
-      'v = t², x = t³/3',
-      'v = 2t, x = t²',
-      'v = t², x = t²',
-      'v = t³/3, x = t⁴/12',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Integrating a = 2t with v(0) = 0 gives v = t²; integrating again with x(0) = 0 gives x = t³/3.',
-  },
-
-  // ─────────────────────────────────────────────────────────────
-  // Non-uniform acceleration
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q71',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'A particle moves with a = -kv². Which description of its motion is correct?',
-    options: [
-      'v = v0/(1 + v0 k t); it never stops in finite time.',
-      'v = v0 e^{-kt}; it stops asymptotically.',
-      'It stops in finite time t = 1/(v0 k).',
-      'v = v0/(1 - v0 k t); it speeds up without bound.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Separating variables gives v = v0/(1 + v0 k t), which approaches zero only as t → ∞.',
-  },
-  {
-    id: 'kin-q72',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt: 'A particle moves with a = -kx. Describe its motion.',
-    options: [
-      'Simple harmonic motion about x = 0.',
-      'Exponential decay to x = 0 without oscillation.',
-      'Uniform acceleration away from the origin.',
-      'Constant-velocity motion.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'x'' = -kx is the SHM equation: x = A cos(ωt + φ) with ω = √k.',
-  },
-  {
-    id: 'kin-q73',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'A particle falls with a = g - kv. What is the terminal velocity, and is it ever reached in finite time?',
-    options: [
-      'Terminal velocity g/k, approached only asymptotically.',
-      'Terminal velocity g/k, reached in finite time t = 1/k.',
-      'Terminal velocity k/g, approached asymptotically.',
-      'There is no terminal velocity.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'v(t) = (g/k)(1 - e^{-kt}) approaches g/k as t → ∞ but never equals it at finite time.',
-  },
-  {
-    id: 'kin-q74',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'numerical',
-    prompt:
-      'A particle with initial speed 4 m/s moves with a = -2√v (SI units). How long (in seconds) does it take to stop?',
-    numericAnswer: 2,
-    numericTolerance: 0.05,
-    unit: 's',
-    explanation:
-      'dv/√v = -2 dt gives 2(√v - √v0) = -2t, so t = √v0 = 2 s.',
-  },
-  {
-    id: 'kin-q75',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt: 'A particle moves with a = v². Describe its motion.',
-    options: [
-      'v = v0/(1 - v0 t): the speed blows up in finite time and the particle never stops.',
-      'The particle slows down exponentially and stops asymptotically.',
-      'The particle stops in finite time t = 1/v0.',
-      'The particle moves with constant velocity.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Separating dv/v² = dt gives v = v0/(1 - v0 t), which diverges at t = 1/v0.',
-  },
-  {
-    id: 'kin-q76',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'For a drag law a = -kvⁿ (k > 0, v ≥ 0), for which n does the particle stop in finite time?',
-    options: [
-      'n < 1',
-      'n > 1',
-      'All n > 0',
-      'No n gives a finite-time stop',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Integrating dv/vⁿ gives a finite stop time only when n < 1; for n ≥ 1 the velocity reaches zero only asymptotically.',
-  },
-  {
-    id: 'kin-q77',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'multiple-choice',
-    prompt:
-      'A particle moves with constant jerk j. Given x0, v0 and a0 at t = 0, what is x(t)?',
-    options: [
-      'x0 + v0 t + ½ a0 t² + (1/6) j t³',
-      'x0 + v0 t + ½ j t²',
-      'x0 + a0 t + ½ j t²',
-      'x0 + v0 t + j t³',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Integrating a = a0 + jt three times with the initial conditions gives the cubic expression.',
-  },
-  {
-    id: 'kin-q78',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'If the acceleration is always perpendicular to the velocity in one dimension, what can you conclude?',
-    options: [
-      'a = 0 whenever v ≠ 0, so the velocity is constant.',
-      'The particle moves in a circle.',
-      'The speed must increase.',
-      'The particle must reverse direction.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Perpendicularity in 1D means a·v = 0; if v ≠ 0 then a = 0, so the motion is uniform.',
-  },
-  {
-    id: 'kin-q79',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt: 'A particle moves with a = -kv³. Does it stop in finite time?',
-    options: [
-      'No — v = 1/√(2kt + 1/v0²) approaches zero only asymptotically.',
-      'Yes — it stops at t = 1/(kv0²).',
-      'Yes — it stops at t = 2v0/k.',
-      'It reverses direction at t = 1/(kv0²).',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'For n = 3 > 1, integrating dv/v³ gives a velocity that vanishes only as t → ∞.',
-  },
-  {
-    id: 'kin-q80',
-    chapterId: 'kinematics-1d',
-    topicId: 'non-uniform-acceleration',
-    difficulty: 'Hard',
-    type: 'numerical',
-    prompt:
-      'A particle with initial speed 4 m/s moves with a = -2/v (SI units). How long (in seconds) does it take to stop?',
-    numericAnswer: 4,
-    numericTolerance: 0.1,
-    unit: 's',
-    explanation:
-      'v dv/dt = -2 gives v² = v0² - 4t, so it stops at t = v0²/4 = 16/4 = 4 s.',
-  },
-
-  // ─────────────────────────────────────────────────────────────
-  // Relative motion in one dimension
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q81',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Two trains move in the same direction with speeds v1 and v2 relative to the ground. What is their relative velocity, and does it depend on the inertial frame?',
-    options: [
-      'v1 - v2; it is invariant under Galilean boosts.',
-      'v1 + v2; it depends on the frame.',
-      'v1 - v2; it depends on the frame.',
-      'v1 + v2; it is invariant under Galilean boosts.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Relative velocity is the difference; adding a common frame velocity to both leaves the difference unchanged.',
-  },
-  {
-    id: 'kin-q82',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
-    difficulty: 'Medium',
-    type: 'multiple-choice',
-    prompt:
-      'Two particles move along the x-axis with constant velocities v1 and v2, starting at x1 and x2. When do they meet?',
-    options: [
-      't = (x2 - x1)/(v1 - v2)',
-      't = (x2 - x1)/(v1 + v2)',
-      't = (x1 + x2)/(v1 - v2)',
-      't = (v1 - v2)/(x2 - x1)',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Setting x1 + v1 t = x2 + v2 t and solving for t gives the stated result.',
-  },
-  {
-    id: 'kin-q83',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
-    difficulty: 'Easy',
-    type: 'multiple-choice',
-    prompt:
-      'A person walks with speed u relative to a moving walkway that moves at V relative to the ground. What is the person speed relative to the ground?',
-    options: [
-      'u + V in the same direction; |u - V| in the opposite direction',
-      'u + V in both directions',
-      'u - V in both directions',
-      'u in both directions, since the walkway is irrelevant',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Velocities add vectorially along the direction of motion: u + V one way and u - V the other.',
-  },
-  {
-    id: 'kin-q84',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
+    id: 'vect-q42',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
     difficulty: 'Medium',
     type: 'true-false',
     prompt:
-      'True or False: Two particles with different velocities can have zero relative velocity.',
+      'True or False: Newton second law is invariant under a Galilean transformation $\\vec{r}\\,'=\\vec{r}-\\vec{V}t$ with constant $\\vec{V}$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — the acceleration is unchanged by a constant-velocity boost, so $\\vec{F}=m\\vec{a}$ retains the same form.',
+  },
+  {
+    id: 'vect-q43',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'In a frame accelerating with $\\vec{a}_0$ relative to an inertial frame, what is the effective force?',
+    options: [
+      '$\\vec{F}_{\\rm eff}=\\vec{F}-m\\vec{a}_0$',
+      '$\\vec{F}_{\\rm eff}=\\vec{F}+m\\vec{a}_0$',
+      '$\\vec{F}_{\\rm eff}=\\vec{F}$',
+      '$\\vec{F}_{\\rm eff}=\\vec{F}-\\vec{a}_0$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Substituting $\\vec{a}=\\vec{a}\\, '+\\vec{a}_0$ into $\\vec{F}=m\\vec{a}$ gives $m\\vec{a}\\, '=\\vec{F}-m\\vec{a}_0$; the extra $-m\\vec{a}_0$ is the fictitious force.',
+  },
+  {
+    id: 'vect-q44',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt: 'Is the normal force always perpendicular to the contact surface?',
+    options: [
+      'Yes — it is by definition the perpendicular component of the contact force. With friction, the total contact force is not perpendicular.',
+      'No — the normal force tilts with friction.',
+      'Yes, and it always equals $mg$ in magnitude.',
+      'Only on horizontal surfaces.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The normal force is the perpendicular component of the contact force by definition; the tangential component is friction.',
+  },
+  {
+    id: 'vect-q45',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'A block rests on an accelerating wedge. Why is the normal force not equal to $mg\\cos\\theta$?',
+    options: [
+      'Because the block accelerates along the wedge, the acceleration has a component along the normal that requires a correction to $N=mg\\cos\\theta$.',
+      'Because the normal force is always vertical.',
+      'Because the wedge surface is curved.',
+      'Because the normal force is zero in an accelerating frame.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Resolving forces in the wedge frame, the perpendicular component equation picks up a term $ma\\sin\\theta$, so $N=mg\\cos\\theta$ holds only when the wedge is inertial (not accelerating).',
+  },
+  {
+    id: 'vect-q46',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'Why is angular velocity $\\vec{\\omega}$ a pseudovector rather than a true vector?',
+    options: [
+      'It is unchanged under spatial reflection, unlike a true polar vector such as $\\vec{v}$.',
+      'It changes sign under reflection like a true vector.',
+      'It has zero magnitude under reflection.',
+      'It cannot be added to other vectors.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Under parity, $\\vec{v}\\to-\\vec{v}$ and $\\vec{r}\\to-\\vec{r}$, but $\\vec{v}=\\vec{\\omega}\\times\\vec{r}$ requires $\\vec{\\omega}\\to\\vec{\\omega}$ — the defining property of a pseudovector.',
+  },
+  {
+    id: 'vect-q47',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Easy',
+    type: 'conceptual',
+    prompt: 'Why is the centrifugal force called a "fictitious" force?',
+    options: [
+      'Because it appears only in the rotating frame; in the inertial frame the only force is centripetal.',
+      'Because its magnitude is zero.',
+      'Because it does not affect motion.',
+      'Because it is perpendicular to the velocity.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'It is a bookkeeping term introduced by transforming to a rotating frame; no physical agent produces it.',
+  },
+  {
+    id: 'vect-q48',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'A particle is at rest in an inertial frame. What is the net pseudo-force on it when viewed from a frame rotating with angular velocity $\\vec{\\Omega}$?',
+    options: [
+      '$-m\\vec{\\Omega}\\times(\\vec{\\Omega}\\times\\vec{r})$ (the centrifugal term).',
+      '$-2m\\vec{\\Omega}\\times\\vec{v}\\, \'$ (the Coriolis term) plus the centrifugal term.',
+      'Only the Coriolis term.',
+      'The net pseudo-force is zero.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'In the rotating frame the particle appears to move with $\\vec{v}\\, \'=-\\vec{\\Omega}\\times\\vec{r}$, so the Coriolis term is $2m\\vec{\\Omega}\\times(\\vec{\\Omega}\\times\\vec{r})$ and the centrifugal term is $-m\\vec{\\Omega}\\times(\\vec{\\Omega}\\times\\vec{r})$. They combine to the total pseudo-force $-m\\vec{\\Omega}\\times(\\vec{\\Omega}\\times\\vec{r})$.',
+  },
+  {
+    id: 'vect-q49',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'Why is tension uniform along a massless string with no tangential forces?',
+    options: [
+      'Because the net force on any massless segment must vanish, so $\\vec{T}$ is the same vector on both ends of every segment.',
+      'Because tension is always a scalar.',
+      'Because gravity pulls equally on both ends.',
+      'Because the string is straight.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'A massless element has zero mass, so the net force on it is zero; therefore the tension vectors on its two sides must be equal and opposite, implying constant tension magnitude along the string.',
+  },
+  {
+    id: 'vect-q50',
+    chapterId: 'vectors',
+    topicId: 'dynamics-vectors',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'Which is the correct vector rocket equation?',
+    options: [
+      '$m\\dot{\\vec{v}} = \\vec{F}_{\\rm ext} - \\vec{u}_{\\rm rel}\\dot m$',
+      '$m\\dot{\\vec{v}} = \\vec{F}_{\\rm ext} + \\vec{u}_{\\rm rel}\\dot m$',
+      '$\\vec{F}_{\\rm ext} = m\\vec{v}$',
+      '$m\\dot{\\vec{v}} = \\vec{F}_{\\rm ext}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Momentum balance gives $\\vec{F}_{\\rm ext}=d(m\\vec{v})/dt=m\\dot{\\vec{v}}+\\dot m\\vec{v}$ with the exhaust velocity entering through the relative velocity term.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Work, energy, line integrals
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q51',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The work done by friction on a body is always negative.',
     options: ['True', 'False'],
     correctOptionIndex: 1,
     explanation:
-      'False: zero relative velocity requires v1 = v2, i.e. equal velocities.',
+      'False — e.g. a block on the flatbed of an accelerating truck is accelerated forward by static friction, which does positive work on it.',
   },
   {
-    id: 'kin-q85',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
+    id: 'vect-q52',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
+    difficulty: 'Hard',
+    type: 'true-false',
+    prompt:
+      'True or False: When a block rests on an accelerating wedge, the normal force does non-zero work on the block.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — the contact point moves as the wedge accelerates, so $\\vec{N}\\cdot d\\vec{r}\\neq 0$ in the ground frame. Energy is transferred between block and wedge.',
+  },
+  {
+    id: 'vect-q53',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: For a central force $\\vec{F}=f(r)\\hat{r}$, the work depends only on the endpoints.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — any central force is conservative because $\\nabla\\times(f(r)\\hat{r})=\\vec{0}$.',
+  },
+  {
+    id: 'vect-q54',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
     difficulty: 'Medium',
     type: 'conceptual',
     prompt:
-      'Two particles have the same acceleration. What can you say about their relative velocity?',
+      'Can a force of constant magnitude do zero work? Can a force of zero magnitude do work?',
     options: [
-      'It is constant, since d(v1 - v2)/dt = a1 - a2 = 0.',
-      'It increases linearly with time.',
-      'It must be zero.',
-      'It decreases with time.',
+      'Yes (centripetal force does zero work); a zero force always does zero work.',
+      'No; yes.',
+      'No; no.',
+      'Yes; yes, in some frames.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'Equal accelerations cancel in the relative velocity, leaving it constant.',
+      'Work is $\\vec{F}\\cdot d\\vec{r}$; a constant-magnitude force perpendicular to the displacement does zero work, while zero force gives zero work identically.',
   },
   {
-    id: 'kin-q86',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
+    id: 'vect-q55',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
     difficulty: 'Hard',
     type: 'conceptual',
     prompt:
-      'A ball is dropped from a train moving at constant velocity. Where does it land relative to the train and relative to the ground?',
+      'How is the work–energy theorem frame-dependent under a Galilean boost?',
     options: [
-      'Directly below the release point in the train frame; a projectile path in the ground frame.',
-      'Behind the release point in the train frame; straight down in the ground frame.',
-      'Straight down in both frames.',
-      'It lands ahead of the release point in the train frame.',
+      'Both work and kinetic energy change under a boost, but the equality $W=\\Delta K$ holds in every inertial frame.',
+      'Only work changes; kinetic energy is invariant.',
+      'Only kinetic energy changes; work is invariant.',
+      'The theorem fails in non-inertial frames only.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'The ball keeps the horizontal velocity of the train, so it stays under the release point in the train frame but follows a parabola in the ground frame.',
+      'Under $\\vec{v}\\to\\vec{v}+\\vec{V}$, $W$ shifts by $\\vec{V}\\cdot\\int\\vec{F}\\,dt$ and $K$ shifts correspondingly; the equality remains valid in any inertial frame.',
   },
   {
-    id: 'kin-q87',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
+    id: 'vect-q56',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'Why can a velocity-dependent force such as $\\vec{F}=-k|\\vec{v}|\\vec{v}$ not be derived from a potential?',
+    options: [
+      'Because it depends on velocity, which is not a function of position alone; energy is dissipated rather than conserved.',
+      'Because it is always zero.',
+      'Because it is conservative.',
+      'Because $k$ is a constant.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'A potential $U(\\vec{r})$ cannot encode velocity dependence; such forces do path-dependent work, so mechanical energy is not conserved.',
+  },
+  {
+    id: 'vect-q57',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
     difficulty: 'Easy',
-    type: 'multiple-choice',
+    type: 'true-false',
     prompt:
-      'Two particles move toward each other with speeds v1 and v2 along the same line. What is their relative speed?',
-    options: ['v1 + v2', '|v1 - v2|', 'v1 v2', '(v1 + v2)/2'],
+      'True or False: The work done by gravity between two heights is independent of the path taken.',
+    options: ['True', 'False'],
     correctOptionIndex: 0,
     explanation:
-      'When moving toward each other, the relative speed is the sum of the speeds.',
+      'True — gravity is conservative; the work depends only on the initial and final heights.',
   },
   {
-    id: 'kin-q88',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
+    id: 'vect-q58',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The work done by a constraint force is always zero.',
+    options: ['True', 'False'],
+    correctOptionIndex: 1,
+    explanation:
+      'False — a block on an accelerating wedge has the normal force doing non-zero work on it in the ground frame.',
+  },
+  {
+    id: 'vect-q59',
+    chapterId: 'vectors',
+    topicId: 'work-energy-vectors',
     difficulty: 'Medium',
     type: 'conceptual',
     prompt:
-      'If two particles have the same velocity at some instant, what can you say about their positions?',
+      'If $\\vec{F}=-\\nabla U$, why does the additive constant in $U$ not matter physically?',
     options: [
-      'Nothing definite — they may be at different positions.',
-      'They must be at the same position.',
-      'They must be moving in opposite directions.',
-      'They must have the same acceleration.',
+      'Because only differences in $U$ (gradients) enter the force and energy balance.',
+      'Because the constant is always zero.',
+      'Because $U$ must be zero at infinity.',
+      'Because the constant cancels the potential energy entirely.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'Equal velocities say nothing about positions; equal positions say nothing about velocities.',
-  },
-  {
-    id: 'kin-q89',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can relative velocity exceed the speed of light in classical mechanics? What does this imply?',
-    options: [
-      'Yes — in classical mechanics there is no speed limit; the framework is valid only for v ≪ c.',
-      'No — relative velocity is always bounded by c.',
-      'Yes, but only for equal masses.',
-      'No, because velocities always add to less than c.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Classical kinematics has no upper bound on speed; relativity is needed when speeds approach c.',
-  },
-  {
-    id: 'kin-q90',
-    chapterId: 'kinematics-1d',
-    topicId: 'relative-motion-1d',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Two cars approach each other. Does the magnitude of their relative velocity depend on which car you measure from? What about the sign?',
-    options: [
-      'The magnitude is the same; only the sign depends on the chosen positive direction.',
-      'Both the magnitude and the sign depend on the car.',
-      'Neither the magnitude nor the sign depends on the car.',
-      'The magnitude changes but the sign does not.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Reversing the reference car flips the sign of the relative velocity but not its magnitude.',
+      'The force depends on $\\nabla U$, which is insensitive to an additive constant; observable energies depend only on differences of $U$.',
   },
 
   // ─────────────────────────────────────────────────────────────
-  // Tricky conceptual problems
+  // Angular momentum and torque
   // ─────────────────────────────────────────────────────────────
   {
-    id: 'kin-q91',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
+    id: 'vect-q60',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'If the origin is shifted by $\\vec{a}$, what is the new angular momentum $\\vec{L}\\, \'$ in terms of the old $\\vec{L}$, $\\vec{a}$, and the momentum $\\vec{p}$?',
+    options: [
+      '$\\vec{L}\\, \' = \\vec{L} + \\vec{a}\\times\\vec{p}$',
+      '$\\vec{L}\\, \' = \\vec{L} - \\vec{a}\\times\\vec{p}$',
+      '$\\vec{L}\\, \' = \\vec{L}$',
+      '$\\vec{L}\\, \' = \\vec{L} + \\vec{a}\\cdot\\vec{p}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Substituting $\\vec{r}\\, \'=\\vec{r}-\\vec{a}$ gives $\\vec{L}\\, \'=\\vec{r}\\, \'\\times\\vec{p}=\\vec{L}-\\vec{a}\\times\\vec{p}$. (The sign depends on the shift convention; here $\\vec{a}$ is the shift of the origin.)',
+  },
+  {
+    id: 'vect-q61',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'For $\\dot{\\vec{L}}=\\vec{\\tau}$ to hold, about which point must both $\\vec{L}$ and $\\vec{\\tau}$ be computed?',
+    options: [
+      'The same point — and if that point accelerates, additional terms appear unless the point is the center of mass or fixed in an inertial frame.',
+      'Any point, independently for $\\vec{L}$ and $\\vec{\\tau}$.',
+      'The center of mass only.',
+      'The origin only.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The equation is derived about a single point; for an accelerating reference point an extra $\\vec{v}_{\\rm pt}\\times\\vec{p}$ term must be added (absent for the CM or a fixed origin).',
+  },
+  {
+    id: 'vect-q62',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
+    difficulty: 'Easy',
+    type: 'conceptual',
+    prompt:
+      'A particle moves uniformly on a circle with constant angular speed. About which point is its angular momentum constant in both magnitude and direction?',
+    options: [
+      'About the center of the circle — $\\vec{L}=mr^2\\omega\\,\\hat{n}$ is fixed.',
+      'About any point in space.',
+      'About no point.',
+      'Only about a point on the circle.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'About the center, $\\vec{r}$ and $\\vec{p}$ rotate together so their cross product is constant. About other points $\\vec{L}$ generally varies.',
+  },
+  {
+    id: 'vect-q63',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'A particle moves in a straight line with constant velocity. About any point, what is its angular momentum?',
+    options: [
+      '$\\vec{L}=m\\vec{r}\\times\\vec{v}$ has constant magnitude $m v d$, where $d$ is the perpendicular distance to the line.',
+      'It is zero about every point.',
+      'It grows linearly with time.',
+      'It is zero only about the origin.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'In uniform straight-line motion, $\\vec{r}\\times\\vec{v}$ is constant about any fixed point, with magnitude $m v d$.',
+  },
+  {
+    id: 'vect-q64',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: For a central force $\\vec{F}=f(r)\\hat{r}$, the angular momentum about the origin is conserved.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — $\\vec{\\tau}=\\vec{r}\\times f(r)\\hat{r}=\\vec{0}$, so $\\dot{\\vec{L}}=\\vec{0}$.',
+  },
+  {
+    id: 'vect-q65',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
     difficulty: 'Medium',
     type: 'conceptual',
-    prompt:
-      'Can an object have zero velocity and zero acceleration simultaneously? What does this mean physically?',
+    prompt: 'How is Kepler second law derived from conservation of angular momentum?',
     options: [
-      'Yes — the object is at rest and will remain at rest (equilibrium).',
-      'No — if a = 0 the velocity must be non-zero.',
-      'Yes, but only instantaneously.',
-      'No — zero velocity always implies non-zero acceleration.',
+      'The areal velocity $dA/dt = \\tfrac12 r^2\\dot\\theta = L/(2m)$ is constant when $L$ is conserved.',
+      'Because the orbit is an ellipse by definition.',
+      'Because the force is proportional to $r$.',
+      'Because angular momentum is zero.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'A book at rest on a table has v = 0 and a = 0; it stays at rest.',
+      'Equal areas in equal times is exactly the statement $dA/dt=L/(2m)=\\text{const}$.',
   },
   {
-    id: 'kin-q92',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
+    id: 'vect-q66',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
     difficulty: 'Medium',
-    type: 'conceptual',
+    type: 'true-false',
     prompt:
-      'Can an object be accelerating when its speed is zero at that instant?',
-    options: [
-      'Yes — e.g. a ball at the top of a vertical throw has v = 0 and a = -g.',
-      'No — zero speed implies zero acceleration.',
-      'Only if the acceleration is zero too.',
-      'Only if the object is in equilibrium.',
-    ],
+      'True or False: The total angular momentum of a system equals $\\vec{L}=\\vec{L}_{\\rm cm}+\\vec{L}_{\\rm about\\,cm}$.',
+    options: ['True', 'False'],
     correctOptionIndex: 0,
     explanation:
-      'Acceleration measures the rate of change of velocity; it need not vanish when v does.',
+      'True — splitting $\\vec{r}_i=\\vec{R}_{\\rm cm}+\\vec{r}_i\\,\'$ gives this decomposition, which is central to rigid-body dynamics.',
   },
   {
-    id: 'kin-q93',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'If v(t0) = 0 and a(t0) > 0, what happens immediately after t0?',
-    options: [
-      'The particle begins moving in the positive direction.',
-      'The particle remains at rest.',
-      'The particle moves in the negative direction.',
-      'The particle reverses direction twice.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A positive acceleration makes the velocity become positive just after t0.',
-  },
-  {
-    id: 'kin-q94',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can the acceleration be zero at a point where the velocity is a maximum or minimum?',
-    options: [
-      'Yes — at a local extremum of v, Fermat theorem gives a = dv/dt = 0.',
-      'No — the acceleration is maximal there.',
-      'Only if the velocity is zero.',
-      'Only if the jerk is also zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A differentiable function has zero derivative at an interior extremum, so a = 0 at the extremum of v.',
-  },
-  {
-    id: 'kin-q95',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'If x(t) is monotonically increasing, what can you say about v(t) and a(t)?',
-    options: [
-      'v(t) ≥ 0; nothing definite about a(t).',
-      'v(t) ≥ 0 and a(t) ≥ 0.',
-      'v(t) ≥ 0 and a(t) ≤ 0.',
-      'Both must be zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Monotonic increase requires v ≥ 0, but the acceleration may be positive, negative, or zero.',
-  },
-  {
-    id: 'kin-q96',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Is it possible for a particle to have discontinuous velocity? What would cause this physically?',
-    options: [
-      'Yes, as an idealization of an impulsive force; with finite forces v is continuous.',
-      'No, under no circumstances.',
-      'Yes, whenever the acceleration is constant.',
-      'Yes, only in free fall.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'An infinite force acting for zero time (an impulse) produces a jump in velocity; real finite forces give continuous v.',
-  },
-  {
-    id: 'kin-q97',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can a particle have acceleration that changes sign while its velocity never changes sign?',
-    options: [
-      'Yes — e.g. v(t) = 2 + sin t > 0 with a = cos t changing sign.',
-      'No — a sign change in a forces a sign change in v.',
-      'Only if the velocity is constant.',
-      'Only if the acceleration is zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'v(t) = 2 + sin t is always positive, while a = cos t alternates sign.',
-  },
-  {
-    id: 'kin-q98',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'For constant acceleration, can the average velocity over some interval be zero? What would that mean physically?',
-    options: [
-      'Yes — e.g. a ball thrown upward and caught at the same height has zero average velocity over the full flight.',
-      'No — constant acceleration always gives non-zero average velocity.',
-      'Yes, but only if the particle is at rest for the whole interval.',
-      'Only if the acceleration is zero.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'A symmetric up-and-down flight has zero net displacement, hence zero average velocity.',
-  },
-  {
-    id: 'kin-q99',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Can two particles with different initial velocities and different accelerations have the same velocity and position at the same time?',
-    options: [
-      'Yes — e.g. x1 = t² and x2 = 2t - 1: at t = 1 both have x = 1 and v = 2.',
-      'No — different initial conditions prevent them from meeting.',
-      'Only if their accelerations are equal.',
-      'Only if their initial velocities are equal.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Solving x1 = x2 and v1 = v2 simultaneously can give a common time and position, as in the example.',
-  },
-  {
-    id: 'kin-q100',
-    chapterId: 'kinematics-1d',
-    topicId: 'tricky-concepts',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Is it possible that at some instant v = 0, a = 0, but the jerk is non-zero?',
-    options: [
-      'Yes — x = t³ at t = 0 has v = 0, a = 0, and jerk = 6.',
-      'No — zero a forces zero jerk.',
-      'Only if the velocity is non-zero.',
-      'Only if the acceleration is changing linearly.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'For x = t³, v = 3t², a = 6t, jerk = 6: at t = 0 both v and a vanish while the jerk does not.',
-  },
-
-  // ─────────────────────────────────────────────────────────────
-  // Miscellaneous
-  // ─────────────────────────────────────────────────────────────
-  {
-    id: 'kin-q101',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'For x(t) = A sin(ωt), what kind of motion is this? What is the relation between a and x?',
-    options: [
-      'Simple harmonic motion with a = -ω²x.',
-      'Uniform motion with a = 0.',
-      'Uniformly accelerated motion with a = -ω².',
-      'Free fall.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Differentiating twice gives a = -Aω² sin(ωt) = -ω²x, the SHM equation.',
-  },
-  {
-    id: 'kin-q102',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Medium',
-    type: 'conceptual',
-    prompt:
-      'Assuming constant deceleration, how does the stopping distance of a car depend on its initial speed?',
-    options: [
-      'Proportional to the square of the speed.',
-      'Proportional to the speed.',
-      'Independent of the speed.',
-      'Proportional to the square root of the speed.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'From 0 = v0² - 2|a|d, the stopping distance d = v0²/(2|a|) ∝ v0².',
-  },
-  {
-    id: 'kin-q103',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Hard',
-    type: 'numerical',
-    prompt:
-      'A particle moves with v(t) = 8 - 2t² (SI units). How long (in seconds) does it take to stop?',
-    numericAnswer: 2,
-    numericTolerance: 0.05,
-    unit: 's',
-    explanation:
-      'Setting v = 0 gives t² = 4, so t = 2 s.',
-  },
-  {
-    id: 'kin-q104',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'Two balls are thrown vertically upward from the same point with the same speed u, the second being thrown time T after the first. When can they meet?',
-    options: [
-      'If T < 2u/g; they meet at time t = u/g + T/2 after the first throw.',
-      'Always, regardless of T.',
-      'If T > 2u/g only.',
-      'They can never meet.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'The second must be launched before the first returns; solving the position equality gives t = u/g + T/2, valid for T < 2u/g.',
-  },
-  {
-    id: 'kin-q105',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Hard',
-    type: 'numerical',
-    prompt:
-      'A ball thrown vertically upward passes a point at height 10 m with speed 10 m/s. What maximum height (in metres, take g = 10 m/s²) does it reach?',
-    numericAnswer: 15,
-    numericTolerance: 0.2,
-    unit: 'm',
-    explanation:
-      'The remaining rise is v²/(2g) = 100/20 = 5 m, so the maximum height is 10 + 5 = 15 m.',
-  },
-  {
-    id: 'kin-q106',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
+    id: 'vect-q67',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
     difficulty: 'Hard',
     type: 'multiple-choice',
     prompt:
-      'A particle starts from rest with a(t) = kt. What are v(t) and x(t)?',
+      'In a rotating body frame, what is the relation between the inertial and body time derivatives of $\\vec{L}$?',
     options: [
-      'v = k t²/2, x = k t³/6',
-      'v = k t, x = k t²/2',
-      'v = k t², x = k t³/3',
-      'v = k t³/3, x = k t⁴/12',
+      '$\\big(d\\vec{L}/dt\\big)_{\\rm inertial}=\\big(d\\vec{L}/dt\\big)_{\\rm body}+\\vec{\\omega}\\times\\vec{L}$',
+      '$\\big(d\\vec{L}/dt\\big)_{\\rm inertial}=\\big(d\\vec{L}/dt\\big)_{\\rm body}-\\vec{\\omega}\\times\\vec{L}$',
+      '$\\big(d\\vec{L}/dt\\big)_{\\rm inertial}=\\big(d\\vec{L}/dt\\big)_{\\rm body}$',
+      '$\\big(d\\vec{L}/dt\\big)_{\\rm body}=\\vec{\\omega}\\times\\vec{L}$',
     ],
     correctOptionIndex: 0,
     explanation:
-      'Integrating a = kt with v(0) = 0 gives v = kt²/2; integrating again with x(0) = 0 gives x = kt³/6.',
+      'The rotating-frame time derivative picks up the $\\vec{\\omega}\\times\\vec{L}$ term, which is responsible for gyroscopic effects.',
   },
   {
-    id: 'kin-q107',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt: 'A particle moves with a = -k(x - x0). Describe the motion.',
-    options: [
-      'Simple harmonic motion about x = x0 with angular frequency √k.',
-      'Exponential decay toward x = x0 without oscillation.',
-      'Uniform acceleration away from x = x0.',
-      'Constant-velocity motion.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'Setting y = x - x0 gives y'' = -ky, so y oscillates harmonically about zero, i.e. x oscillates about x0.',
-  },
-  {
-    id: 'kin-q108',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Hard',
-    type: 'conceptual',
-    prompt:
-      'If the displacement–time graph is a cubic polynomial, what can you say about the acceleration and the jerk?',
-    options: [
-      'The acceleration is linear in t and the jerk is constant.',
-      'Both the acceleration and the jerk are constant.',
-      'The acceleration is constant and the jerk is linear in t.',
-      'The acceleration is quadratic in t and the jerk is linear in t.',
-    ],
-    correctOptionIndex: 0,
-    explanation:
-      'For x = at³ + bt² + ct + d, a = 6at + 2b (linear) and jerk = 6a (constant).',
-  },
-  {
-    id: 'kin-q109',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
+    id: 'vect-q68',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
     difficulty: 'Medium',
-    type: 'numerical',
-    prompt:
-      'A ball is thrown vertically upward with speed 20 m/s. What is the total time of flight (in seconds, take g = 10 m/s²) before it returns to the thrower?',
-    numericAnswer: 4,
-    numericTolerance: 0.1,
-    unit: 's',
-    explanation:
-      'The time of flight is 2u/g = 2(20)/10 = 4 s.',
-  },
-  {
-    id: 'kin-q110',
-    chapterId: 'kinematics-1d',
-    topicId: 'miscellaneous',
-    difficulty: 'Hard',
     type: 'conceptual',
-    prompt:
-      'A particle moves with v(t) = v0 e^{-kt}. What is x(t), and how far does the particle travel in total as t → ∞?',
+    prompt: 'Give a concrete example where $\\vec{L}$ and $\\vec{\\omega}$ are not parallel.',
     options: [
-      'x = x0 + (v0/k)(1 - e^{-kt}); the total distance is v0/k.',
-      'x = x0 + v0 t; the distance is infinite.',
-      'x = x0 + v0 e^{-kt}; the distance is v0/k.',
-      'x = x0 + (v0/k)e^{-kt}; the distance is v0/(2k).',
+      'A diatomic molecule rotating about an axis not perpendicular to its bond, or any asymmetric rigid top.',
+      'A particle moving in a straight line.',
+      'A uniform sphere spinning about a diameter.',
+      'A point particle.',
     ],
     correctOptionIndex: 0,
     explanation:
-      'Integrating v with x(0) = x0 gives x = x0 + (v0/k)(1 - e^{-kt}); as t → ∞, x → x0 + v0/k.',
+      'For non-spherical bodies the inertia tensor is anisotropic, so $\\vec{L}=\\mathbf{I}\\vec{\\omega}$ is not parallel to $\\vec{\\omega}$ in general.',
   },
+  {
+    id: 'vect-q69',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'Angular momentum is a pseudovector. What is the cross product of two true (polar) vectors?',
+    options: [
+      'A pseudovector — it is unchanged under spatial reflection.',
+      'A true vector — it flips sign under reflection.',
+      'A scalar.',
+      'Undefined under reflection.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Under parity, $\\vec{A}\\to-\\vec{A}$ and $\\vec{B}\\to-\\vec{B}$, so $\\vec{A}\\times\\vec{B}\\to+\\vec{A}\\times\\vec{B}$: the result is a pseudovector.',
+  },
+  {
+    id: 'vect-q70',
+    chapterId: 'vectors',
+    topicId: 'angular-momentum-torque',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'Why is $\\vec{L}=\\mathbf{I}\\vec{\\omega}$ with an inertia tensor $\\mathbf{I}$ rather than a scalar?',
+    options: [
+      'Because the mass distribution responds differently to rotation about different axes; a scalar cannot encode that anisotropy.',
+      'Because angular velocity is a scalar.',
+      'Because $\\mathbf{I}$ must be diagonal in every frame.',
+      'Because $\\vec{L}$ and $\\vec{\\omega}$ are always parallel.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'A scalar moment of inertia would force $\\vec{L}\\parallel\\vec{\\omega}$; the tensor captures the directional dependence of the response of the mass distribution.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Rotational dynamics and inertia tensor
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q71',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'Under what circumstances can the moment of inertia be treated as a scalar rather than a tensor?',
+    options: [
+      'For rotation about a fixed axis, or for a spherical top where $I_1=I_2=I_3$.',
+      'Always — the moment of inertia is a scalar by definition.',
+      'Only in two dimensions.',
+      'Only for massless bodies.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'When rotation is confined to one axis (or the body is spherically symmetric), the relevant component is a single scalar.',
+  },
+  {
+    id: 'vect-q72',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The principal axes of a symmetric inertia tensor are mutually orthogonal.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — real symmetric matrices are diagonalizable by an orthogonal transformation (the spectral theorem).',
+  },
+  {
+    id: 'vect-q73',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: For a spherical top, $\\vec{L}$ is parallel to $\\vec{\\omega}$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — all principal moments are equal, so $\\vec{L}=I\\vec{\\omega}$ with a scalar $I$.',
+  },
+  {
+    id: 'vect-q74',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'What are the principal moments of inertia of a uniform rectangular plate (sides $a,b$, mass $m$) about its center, and what happens when $a=b$?',
+    options: [
+      '$I_x=mb^2/12$, $I_y=ma^2/12$, $I_z=m(a^2+b^2)/12$; for $a=b$, $I_x=I_y$ and $I_z=I_x+I_y$.',
+      '$I_x=ma^2/12$, $I_y=mb^2/12$, $I_z=0$.',
+      '$I_x=I_y=ma^2/6$, $I_z=ma^2/12$.',
+      'All three are equal for every rectangle.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The thin-plate (lamina) theorem gives $I_z=I_x+I_y$; for a square the two in-plane moments are equal.',
+  },
+  {
+    id: 'vect-q75',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'What does a negative product of inertia $I_{xy}<0$ mean physically?',
+    options: [
+      'More mass lies in quadrants II and IV relative to the axes than in I and III.',
+      'The body has negative mass.',
+      'The moment of inertia about $x$ is negative.',
+      'The body cannot rotate.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      '$I_{xy}=-\\int xy\\,dm$; a negative value means $xy$ is positive on average in the mass distribution, i.e. more mass in quadrants II and IV.',
+  },
+  {
+    id: 'vect-q76',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'Which statement correctly reflects the parallel-axis theorem?',
+    options: [
+      '$I=I_{\\rm cm}+Md^2$, with the reference axis through the center of mass.',
+      '$I=I_{\\rm cm}-Md^2$.',
+      '$I=I_{\\rm cm}+Md$ (linear in $d$).',
+      'The theorem holds for any reference axis, not just the CM.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The cross term vanishes only when the origin is the CM, which is why the theorem is stated specifically about the CM axis.',
+  },
+  {
+    id: 'vect-q77',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'For a symmetric top, what do Euler equations predict about $\\omega_3$ and about $\\omega_1,\\omega_2$?',
+    options: [
+      '$\\omega_3$ is constant; $\\omega_1,\\omega_2$ precess with frequency $(I_3-I_1)\\omega_3/I_1$.',
+      'All three components are constant.',
+      '$\\omega_3$ oscillates; $\\omega_1,\\omega_2$ decay.',
+      '$\\omega_1,\\omega_2,\\omega_3$ all grow exponentially.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'With $I_1=I_2$, the $\\omega_3$ equation decouples (constant); the other two satisfy a linear system whose solutions oscillate at the stated frequency.',
+  },
+  {
+    id: 'vect-q78',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'Why is rotation about the intermediate principal axis unstable (tennis racket theorem)?',
+    options: [
+      'Because simultaneous conservation of angular momentum and energy cannot be maintained for small perturbations about the intermediate axis, so they grow exponentially.',
+      'Because the intermediate axis has zero moment of inertia.',
+      'Because angular momentum is not conserved about that axis.',
+      'Because energy is not conserved in rigid-body motion.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Linearizing Euler equations about rotation along the intermediate axis gives a growing mode; the other two axes give bounded oscillations.',
+  },
+  {
+    id: 'vect-q79',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'For a rapidly spinning top under gravity, what is the vector relation that determines gyroscopic precession?',
+    options: [
+      '$\\vec{\\tau}=d\\vec{L}/dt=\\vec{\\Omega}\\times\\vec{L}$',
+      '$\\vec{\\tau}=\\vec{L}\\times\\vec{\\Omega}$',
+      '$\\vec{\\tau}=m\\vec{g}$',
+      '$\\vec{\\tau}=\\vec{\\omega}\\cdot\\vec{L}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The gravitational torque changes the direction (not the magnitude) of the large spin angular momentum; this precession equation gives $\\vec{\\Omega}=\\vec{\\tau}/L$ for small tilt.',
+  },
+  {
+    id: 'vect-q80',
+    chapterId: 'vectors',
+    topicId: 'rotational-dynamics',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: For a sphere rolling without slipping on a plane, $\\vec{v}_{\\rm cm}=\\vec{\\omega}\\times\\vec{R}$, where $\\vec{R}$ points from the contact point to the center.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — the contact point is instantaneously at rest; $\\vec{v}_{\\rm cm}=\\vec{\\omega}\\times\\vec{R}$ is the rolling-without-slipping condition.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Central forces and orbits
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q81',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt: 'Which central forces are conservative?',
+    options: [
+      'All of them — $\\nabla\\times(f(r)\\hat{r})=\\vec{0}$ for any radial function $f(r)$.',
+      'Only $f(r)\\propto 1/r^2$.',
+      'Only $f(r)\\propto r$.',
+      'Only spherically symmetric potentials give conservative forces.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The curl of any radial field vanishes identically, so every central force is conservative regardless of the radial dependence.',
+  },
+  {
+    id: 'vect-q82',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: Motion under a central force is always confined to a plane perpendicular to $\\vec{L}$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — $\\vec{L}$ is constant and $\\vec{r}\\cdot\\vec{L}=0$, so the position vector always lies in a fixed plane.',
+  },
+  {
+    id: 'vect-q83',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'Which is Binet equation for the orbit $u(\\theta)=1/r(\\theta)$ under a central force?',
+    options: [
+      '$u\\, \'+u = -\\dfrac{m F(1/u)}{L^2 u^2}$',
+      '$u\\, \'+u = \\dfrac{m F(1/u)}{L^2 u^2}$',
+      '$u\\, \'-u = -\\dfrac{m F(1/u)}{L^2 u^2}$',
+      '$u\\, \'+2u = \\dfrac{m F(1/u)}{L^2 u^2}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Binet equation follows from the radial equation with $L=mr^2\\dot\\theta$: $u\\, \'+u=-mF(1/u)/(L^2u^2)$.',
+  },
+  {
+    id: 'vect-q84',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'For a power-law central force $F=-kr^n$, circular orbits are stable when:',
+    options: [
+      '$n>-3$',
+      '$n>0$',
+      '$n>-1$',
+      'They are always stable.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The effective potential has a minimum with $V_{\\rm eff}\\,\'\'>0$ iff $n>-3$; for $n\\le -3$ the circular orbit is unstable.',
+  },
+  {
+    id: 'vect-q85',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'For the inverse-square force, what is the Runge–Lenz vector and what is its role?',
+    options: [
+      '$\\vec{A}=\\vec{p}\\times\\vec{L}-mk\\hat{r}/r$; it is conserved and points along the major axis, fixing the orbit orientation.',
+      '$\\vec{A}=\\vec{L}\\times\\vec{r}$; it is the angular momentum itself.',
+      'It is zero in every orbit.',
+      'It equals the total energy.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The Runge–Lenz vector is an additional conserved quantity special to the $1/r^2$ force; its direction fixes the perihelion of the Kepler ellipse.',
+  },
+  {
+    id: 'vect-q86',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'According to Bertrand theorem, which central forces give closed orbits for all bounded motion?',
+    options: [
+      '$F\\propto 1/r^2$ and $F\\propto r$',
+      'Only $F\\propto 1/r^2$',
+      'Only $F\\propto r$',
+      'Any attractive power law',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Bertrand theorem identifies exactly two: the inverse-square force and the harmonic-oscillator force.',
+  },
+  {
+    id: 'vect-q87',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'Under an inverse-square central force, which conic corresponds to each sign of total energy?',
+    options: [
+      '$E<0$: ellipse; $E=0$: parabola; $E>0$: hyperbola.',
+      '$E<0$: hyperbola; $E>0$: ellipse.',
+      'All orbits are circles.',
+      'All orbits are parabolas.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The orbit is $r=p/(1+e\\cos\\theta)$ with eccentricity set by $E$; the three signs give the three conic types.',
+  },
+  {
+    id: 'vect-q88',
+    chapterId: 'vectors',
+    topicId: 'central-forces',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The two-body problem under gravity reduces to a one-body problem in the relative coordinate $\\vec{r}=\\vec{r}_1-\\vec{r}_2$ with reduced mass $\\mu=m_1m_2/(m_1+m_2)$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — the center-of-mass motion decouples, and the relative motion is a one-body problem with $\\mu$.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Curvilinear coordinates and moving bases
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q89',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'In polar coordinates, what are $\\dot{\\hat{e}}_r$ and $\\dot{\\hat{e}}_\\theta$?',
+    options: [
+      '$\\dot{\\hat{e}}_r=\\dot\\theta\\hat{e}_\\theta$ and $\\dot{\\hat{e}}_\\theta=-\\dot\\theta\\hat{e}_r$',
+      '$\\dot{\\hat{e}}_r=-\\dot\\theta\\hat{e}_\\theta$ and $\\dot{\\hat{e}}_\\theta=\\dot\\theta\\hat{e}_r$',
+      '$\\dot{\\hat{e}}_r=\\dot\\theta\\hat{e}_\\theta$ and $\\dot{\\hat{e}}_\\theta=\\dot\\theta\\hat{e}_r$',
+      'Both are zero.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Differentiating the unit vectors $\\hat{e}_r=(\\cos\\theta,\\sin\\theta)$ and $\\hat{e}_\\theta=(-\\sin\\theta,\\cos\\theta)$ gives these relations.',
+  },
+  {
+    id: 'vect-q90',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'Why can one not simply differentiate the components of velocity in polar coordinates to obtain acceleration?',
+    options: [
+      'Because the polar basis vectors themselves rotate with position, contributing extra terms.',
+      'Because polar coordinates are not orthogonal.',
+      'Because velocity in polar coordinates is a scalar.',
+      'Because acceleration is always radial.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The frame vectors $\\hat{e}_r,\\hat{e}_\\theta$ vary with $\\theta$; differentiating $\\vec{v}$ requires differentiating both components and basis vectors.',
+  },
+  {
+    id: 'vect-q91',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'In spherical coordinates, which is the correct velocity expression?',
+    options: [
+      '$\\vec{v}=\\dot r\\hat{e}_r+r\\dot\\theta\\hat{e}_\\theta+r\\sin\\theta\\,\\dot\\phi\\,\\hat{e}_\\phi$',
+      '$\\vec{v}=\\dot r\\hat{e}_r+r\\dot\\phi\\hat{e}_\\phi$',
+      '$\\vec{v}=r\\dot\\theta\\hat{e}_\\theta+r\\dot\\phi\\hat{e}_\\phi$',
+      '$\\vec{v}=\\dot r\\hat{e}_r+r\\dot\\phi\\hat{e}_\\theta$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Each velocity component is the corresponding scale factor times the rate of the coordinate: $h_r=1$, $h_\\theta=r$, $h_\\phi=r\\sin\\theta$.',
+  },
+  {
+    id: 'vect-q92',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: In cylindrical coordinates, $\\dot{\\hat{e}}_\\rho=\\dot\\phi\\hat{e}_\\phi$ and $\\dot{\\hat{e}}_\\phi=-\\dot\\phi\\hat{e}_\\rho$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — differentiating $\\hat{e}_\\rho=(\\cos\\phi,\\sin\\phi)$ gives exactly these relations.',
+  },
+  {
+    id: 'vect-q93',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: Unit vectors in curvilinear coordinates depend on position, while Cartesian unit vectors do not.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — curvilinear basis vectors point along changing coordinate directions, whereas Cartesian directions are fixed.',
+  },
+  {
+    id: 'vect-q94',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'In spherical coordinates, $\\vec{r}=r\\hat{e}_r$. Why does it not follow that $\\nabla\\cdot\\vec{r}=1$?',
+    options: [
+      'Because $\\hat{e}_r$ itself depends on position, so $\\nabla\\cdot(r\\hat{e}_r)=3\\neq 1$.',
+      'Because $\\vec{r}$ is not a vector in spherical coordinates.',
+      'Because $\\nabla\\cdot\\vec{r}=0$ in spherical coordinates.',
+      'Because the divergence is defined only in Cartesian coordinates.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The correct divergence is $3$; the naive $1$ ignores the position dependence of the radial unit vector.',
+  },
+  {
+    id: 'vect-q95',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt: 'What role do Christoffel symbols play in curvilinear kinematics?',
+    options: [
+      'They encode the position-dependence of the basis, giving extra terms like $\\Gamma^\\theta_{r\\theta}\\dot r\\dot\\theta$ in the acceleration.',
+      'They are the components of the acceleration itself.',
+      'They vanish in every coordinate system.',
+      'They are the components of the velocity.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Christoffel symbols appear because the basis vectors change with position; the acceleration picks up quadratic velocity terms weighted by them.',
+  },
+  {
+    id: 'vect-q96',
+    chapterId: 'vectors',
+    topicId: 'curvilinear-coordinates',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: In an orthogonal curvilinear system with scale factors $h_i$, the velocity component along $\\hat{e}_i$ is $h_i\\dot q_i$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — the physical velocity component is the scale factor times the rate of change of the coordinate.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Rigid body motion
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q97',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: A rigid body has exactly six degrees of freedom.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — three translational plus three rotational (Euler angles).',
+  },
+  {
+    id: 'vect-q98',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The velocity of any point of a rigid body can be written as $\\vec{v}=\\vec{v}_{\\rm cm}+\\vec{\\omega}\\times\\vec{r}\\,\'$, where $\\vec{r}\\,\'$ is measured from the center of mass.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — this is the standard rigid-body velocity decomposition.',
+  },
+  {
+    id: 'vect-q99',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'Do finite rotations commute? Do infinitesimal rotations commute?',
+    options: [
+      'Finite rotations generally do not commute; infinitesimal rotations do (to first order).',
+      'Both commute.',
+      'Neither commutes.',
+      'Infinitesimal rotations do not commute; finite ones do.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Products of finite rotation matrices generally depend on order, but to first order in the angles the commutator vanishes.',
+  },
+  {
+    id: 'vect-q100',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt: 'Why are three Euler angles needed to specify a rigid-body orientation?',
+    options: [
+      'Because $SO(3)$ has three independent parameters; fewer cannot fix the orientation of a frame in space.',
+      'Because one angle per dimension is required.',
+      'Because angular velocity is a vector.',
+      'Because the inertia tensor is symmetric.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The rotation group $SO(3)$ is three-dimensional, so three angles (e.g. precession, nutation, spin) are necessary and sufficient.',
+  },
+  {
+    id: 'vect-q101',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'In terms of Euler angle rates, which expression correctly gives the angular velocity?',
+    options: [
+      '$\\vec{\\omega}=\\dot\\phi\\,\\hat{k}+\\dot\\theta\\,\\hat{n}\\,\'+\\dot\\psi\\,\\hat{k}\\,\'\\,\'$ (with the corresponding rotated axes).',
+      '$\\vec{\\omega}=\\dot\\phi+\\dot\\theta+\\dot\\psi$ as a scalar sum.',
+      '$\\vec{\\omega}=\\dot\\theta\\,\\hat{k}$ only.',
+      '$\\vec{\\omega}=\\dot\\psi\\,\\hat{k}$ only.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Each Euler angle contributes an angular velocity along its own instantaneous axis; the total is their vector sum.',
+  },
+  {
+    id: 'vect-q102',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'Angular velocity $\\vec{\\omega}$ is a pseudovector. Which statement reflects this?',
+    options: [
+      'Under spatial reflection $\\vec{\\omega}$ is unchanged, unlike a true vector such as $\\vec{v}$; yet it adds vectorially under rotations.',
+      'It flips sign under spatial reflection.',
+      'It is a scalar.',
+      'It cannot be added to other vectors.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The reflection behaviour is the defining property of a pseudovector; vector addition is unaffected.',
+  },
+  {
+    id: 'vect-q103',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The instantaneous axis of rotation of a rigid body may lie outside the body itself.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — e.g. a spinning top whose instantaneous axis passes through a point not contained in the material of the top.',
+  },
+  {
+    id: 'vect-q104',
+    chapterId: 'vectors',
+    topicId: 'rigid-body-motion',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'Why does the plane of oscillation of a Foucault pendulum precess, and how does the rate depend on latitude?',
+    options: [
+      'The Coriolis force deflects the bob; the precession rate is $\\Omega\\sin\\lambda$, where $\\lambda$ is latitude.',
+      'The centrifugal force tilts the pendulum; the rate is $\\Omega\\cos\\lambda$.',
+      'The Earth magnetic field twists the plane; the rate is constant.',
+      'The pendulum precesses due to the gravitational gradient alone.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The horizontal component of the Coriolis force rotates the oscillation plane at a rate proportional to the vertical component of Earth angular velocity, $\\Omega\\sin\\lambda$.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Miscellaneous tricky problems
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q105',
+    chapterId: 'vectors',
+    topicId: 'tricky-vector-concepts',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The sum of the three vectors joining the centroid of a triangle to its vertices is zero.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — $\\vec{G}=(\\vec{A}+\\vec{B}+\\vec{C})/3$, so $\\vec{A}+\\vec{B}+\\vec{C}-3\\vec{G}=\\vec{0}$.',
+  },
+  {
+    id: 'vect-q106',
+    chapterId: 'vectors',
+    topicId: 'tricky-vector-concepts',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The scalar triple product is invariant under cyclic permutation and equals the (signed) volume of the parallelepiped spanned by the three vectors.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — both properties follow from the determinant representation of the triple product.',
+  },
+  {
+    id: 'vect-q107',
+    chapterId: 'vectors',
+    topicId: 'tricky-vector-concepts',
+    difficulty: 'Hard',
+    type: 'true-false',
+    prompt:
+      'True or False: If $\\vec{A}\\cdot\\vec{B}=0$ and $\\vec{A}\\times\\vec{B}=\\vec{0}$ simultaneously, then $\\vec{A}=\\vec{0}$ or $\\vec{B}=\\vec{0}$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — perpendicular and parallel can only happen if at least one vector is zero.',
+  },
+  {
+    id: 'vect-q108',
+    chapterId: 'vectors',
+    topicId: 'tricky-vector-concepts',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'From $\\vec{A}\\times\\vec{B}=\\vec{A}\\times\\vec{C}$ one cannot conclude $\\vec{B}=\\vec{C}$. What does $\\vec{A}\\times(\\vec{B}-\\vec{C})=\\vec{0}$ imply?',
+    options: [
+      '$\\vec{B}-\\vec{C}$ is parallel to $\\vec{A}$, i.e. $\\vec{B}=\\vec{C}+\\lambda\\vec{A}$.',
+      '$\\vec{B}=\\vec{C}$ always.',
+      '$\\vec{A}$ is perpendicular to $\\vec{B}-\\vec{C}$.',
+      '$\\vec{B}-\\vec{C}=\\vec{0}$.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The cross product vanishes for parallel vectors; $\\vec{B}-\\vec{C}$ may be any multiple of $\\vec{A}$.',
+  },
+  {
+    id: 'vect-q109',
+    chapterId: 'vectors',
+    topicId: 'tricky-vector-concepts',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: Equality in the Cauchy–Schwarz inequality holds iff $\\vec{A}$ and $\\vec{B}$ are parallel.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — equality requires $\\cos^2\\theta=1$; parallel or antiparallel is the condition.',
+  },
+  {
+    id: 'vect-q110',
+    chapterId: 'vectors',
+    topicId: 'tricky-vector-concepts',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'Can four vectors in three-dimensional space be linearly independent?',
+    options: [
+      'No — any four vectors in $\\mathbb{R}^3$ are linearly dependent.',
+      'Yes, if they are mutually orthogonal.',
+      'Only if one of them is zero.',
+      'Only if they are all unit vectors.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The dimension of $\\mathbb{R}^3$ is 3, so any set of four vectors is linearly dependent; a non-trivial combination must vanish.',
+  },  
 ];
 
