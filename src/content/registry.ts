@@ -33,7 +33,7 @@ export const SUBJECTS: SubjectItem[] = [
     accentColor: '#2563EB',
   },
   {
-    id: 'classical-mechanics',
+    id: 'classical-mechanics-2',
     title: 'Classical Mechanics 2',
     subtitle: 'Motion, Forces, Energy & Spatial Geometry',
     description:
@@ -150,6 +150,87 @@ export const CHAPTERS: ChapterItem[] = [
   {
     id: 'vectors',
     subjectId: 'classical-mechanics',
+    resourceId: 'cm-foundations-text',
+    number: 1,
+    title: 'Vectors',
+    summary:
+      'Master directional quantities in 2D and 3D space—from graphical arrows and trigonometric components to unit vectors, dot products, and 3D cross products.',
+    estimatedMinutes: 90,
+    status: 'available',
+    learningObjectives: [
+      'Distinguish scalar quantities from directional vector quantities in physical contexts.',
+      'Convert fluently between polar (magnitude, angle) and Cartesian (Ax, Ay) coordinates.',
+      'Combine and subtract vectors both geometrically (head-to-tail, parallelogram) and algebraically.',
+      'Resolve any vector into orthogonal rectangular components and express it with unit vectors i, j, k.',
+      'Compute and physically interpret dot products (work, projection) and 3D cross products (torque, right-hand rule).',
+    ],
+    keyEquations: [
+      {
+        label: 'Magnitude & Angle',
+        latex: 'A = \\sqrt{A_x^2 + A_y^2}, \\quad \\theta = \\operatorname{atan2}(A_y, A_x)',
+        meaning: 'Links rectangular coordinates to arrow length and direction.',
+      },
+      {
+        label: 'Vector Resolution',
+        latex: 'A_x = A\\cos\\theta, \\quad A_y = A\\sin\\theta',
+        meaning: 'Projects a vector onto perpendicular horizontal and vertical axes.',
+      },
+      {
+        label: 'Vector Addition',
+        latex: 'R_x = A_x + B_x, \\quad R_y = A_y + B_y, \\quad R = \\sqrt{R_x^2 + R_y^2}',
+        meaning: 'Computes the resultant vector from independent axis sums.',
+      },
+      {
+        label: 'Unit Vector Form',
+        latex: '\\vec{A} = A_x\\hat{i} + A_y\\hat{j} + A_z\\hat{k}',
+        meaning: 'Expresses any 3D vector as a linear combination of standard basis unit vectors.',
+      },
+      {
+        label: 'Dot Product',
+        latex: '\\vec{A} \\cdot \\vec{B} = |\\vec{A}||\\vec{B}|\\cos\\theta = A_x B_x + A_y B_y',
+        meaning: 'Measures directional alignment; fundamental to mechanical work.',
+      },
+      {
+        label: 'Cross Product',
+        latex: '|\\vec{A} \\times \\vec{B}| = |\\vec{A}||\\vec{B}|\\sin\\theta',
+        meaning: 'Produces a perpendicular 3D vector scaled by the spanned parallelogram area.',
+      },
+    ],
+    topicIds: VECTORS_TOPICS.map((t) => t.id),
+    simulationIds: [
+      'representation',
+      'addition',
+      'subtraction',
+      'resolution',
+      'unit-vectors',
+      'dot-product',
+      'cross-product',
+      'displacement',
+    ],
+    modules: [
+      ...VECTORS_TOPICS.map((t) => ({
+        id: `mod-${t.id}`,
+        kind: 'lesson' as const,
+        title: `${t.order}. ${t.title}`,
+        refId: t.id,
+      })),
+      {
+        id: 'mod-vec-lab',
+        kind: 'simulation',
+        title: 'Interactive Vector Simulation Lab',
+        refId: 'representation',
+      },
+      {
+        id: 'mod-vec-practice',
+        kind: 'exercise-set',
+        title: 'Vectors Practice & Quiz Set',
+        refId: 'vectors',
+      },
+    ],
+  },
+    {
+    id: 'vectors',
+    subjectId: 'classical-mechanics-2',
     resourceId: 'cm-foundations-text',
     number: 1,
     title: 'Vectors',
