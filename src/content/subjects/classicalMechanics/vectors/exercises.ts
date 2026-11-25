@@ -191,4 +191,17 @@ export const VECTORS_EXERCISES: PracticeQuestion[] = [
     explanation:
       'False. Two vectors sum to zero only when $\\vec{A} = -\\vec{B}$, which requires them to have equal magnitudes and opposite directions. (You need at least three vectors of unequal magnitudes to sum to zero.)',
   },
+  {
+    id: 'vec-q13',
+    chapterId: 'vectors',
+    topicId: 'applications-of-vectors',
+    difficulty: 'Hard',
+    type: 'true-false',
+    prompt:
+      'True or False: If two vectors have different magnitudes, it is still possible for the sum of those two vectors alone to equal the zero vector.',
+    options: ['True', 'False'],
+    correctOptionIndex: 1,
+    explanation:
+      'False. Two vectors sum to zero only when $\\vec{A} = -\\vec{B}$, which requires them to have equal magnitudes and opposite directions. (You need at least three vectors of unequal magnitudes to sum to zero.)',
+  },  
 ];
