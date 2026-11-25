@@ -192,18 +192,210 @@ export const VECTORS_EXERCISES: PracticeQuestion[] = [
       'False. Two vectors sum to zero only when $\\vec{A} = -\\vec{B}$, which requires them to have equal magnitudes and opposite directions. (You need at least three vectors of unequal magnitudes to sum to zero.)',
   },
   {
-    id: 'vec-q13',
+    id: 'vect-q1',
     chapterId: 'vectors',
-    topicId: 'applications-of-vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'If $|\\vec{A}+\\vec{B}| = |\\vec{A}-\\vec{B}|$, what is the angle between $\\vec{A}$ and $\\vec{B}$?',
+    options: ['0°', '45°', '90°', '180°'],
+    correctOptionIndex: 2,
+    explanation:
+      'Squaring both sides gives $A^2+B^2+2A B\\cos\\theta = A^2+B^2-2AB\\cos\\theta$, so $\\cos\\theta=0$, i.e. $\\theta=90^\\circ$.',
+  },
+  {
+    id: 'vect-q2',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
     difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'Three vectors of magnitudes $3, 4, 5$ satisfy $\\vec{A}+\\vec{B}+\\vec{C}=0$. Which one of the three pairwise angles must equal $90^\\circ$?',
+    options: [
+      'The angle between $\\vec{A}$ and $\\vec{B}$',
+      'The angle between $\\vec{A}$ and $\\vec{C}$',
+      'The angle between $\\vec{B}$ and $\\vec{C}$',
+      'None is necessarily $90^\\circ$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Writing $\\vec{C}=-(\\vec{A}+\\vec{B})$ and squaring, $25=9+16+2\\vec{A}\\cdot\\vec{B}$ gives $\\vec{A}\\cdot\\vec{B}=0$, so the angle between $\\vec{A}$ (3) and $\\vec{B}$ (4) is $90^\\circ$.',
+  },
+  {
+    id: 'vect-q3',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Medium',
     type: 'true-false',
     prompt:
-      'True or False: If two vectors have different magnitudes, it is still possible for the sum of those two vectors alone to equal the zero vector.',
+      'True or False: For any two vectors, $|\\vec{A}\\times\\vec{B}|^2 + (\\vec{A}\\cdot\\vec{B})^2 = |\\vec{A}|^2|\\vec{B}|^2$.',
     options: ['True', 'False'],
-    correctOptionIndex: 1,
+    correctOptionIndex: 0,
     explanation:
-      'False. Two vectors sum to zero only when $\\vec{A} = -\\vec{B}$, which requires them to have equal magnitudes and opposite directions. (You need at least three vectors of unequal magnitudes to sum to zero.)',
-  },  
+      'True. Writing $A B\\sin\\theta$ and $A B\\cos\\theta$ and adding squares gives $A^2B^2(\\sin^2\\theta+\\cos^2\\theta)=A^2B^2$.',
+  },
+  {
+    id: 'vect-q4',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Easy',
+    type: 'multiple-choice',
+    prompt:
+      'Can two vectors of equal magnitude sum to zero? Can two vectors of different magnitudes sum to zero?',
+    options: [
+      'Equal: yes ($\\vec{B}=-\\vec{A}$); Different: no (the sum of two vectors has magnitude at least $||\\vec{A}|-|\\vec{B}||>0$).',
+      'Equal: no; Different: yes.',
+      'Both are possible.',
+      'Neither is possible.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Two vectors sum to zero only when they are equal in magnitude and opposite in direction. Different magnitudes cannot cancel.',
+  },
+  {
+    id: 'vect-q5',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'If $\\vec{A}\\cdot\\vec{B} = \\vec{A}\\cdot\\vec{C}$, must $\\vec{B} = \\vec{C}$?',
+    options: [
+      'No — $\\vec{B} = \\vec{C} + \\vec{u}$ where $\\vec{u}\\perp\\vec{A}$ is the general solution.',
+      'Yes — the dot product has the cancellation property.',
+      'Only if $\\vec{A}=0$.',
+      'Only if the vectors are unit vectors.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      '$\\vec{A}\\cdot(\\vec{B}-\\vec{C})=0$ means $\\vec{B}-\\vec{C}$ is perpendicular to $\\vec{A}$, which does not force it to vanish.',
+  },
+  {
+    id: 'vect-q6',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'If $\\vec{A}\\times\\vec{B} = \\vec{A}\\times\\vec{C}$, must $\\vec{B} = \\vec{C}$?',
+    options: [
+      'No — $\\vec{B} = \\vec{C} + \\lambda\\vec{A}$ is the general solution.',
+      'Yes — the cross product has the cancellation property.',
+      'Only if $\\vec{A}=0$.',
+      'Only if $\\vec{B}$ and $\\vec{C}$ are parallel.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      '$\\vec{A}\\times(\\vec{B}-\\vec{C})=0$ means $\\vec{B}-\\vec{C}$ is parallel to $\\vec{A}$; any $\\lambda\\vec{A}$ addition is invisible to the cross product with $\\vec{A}$.',
+  },
+  {
+    id: 'vect-q7',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'For a differentiable vector $\\vec{A}(t)$ with $\\vec{A}\\neq\\vec{0}$, what is $d|\\vec{A}|/dt$?',
+    options: [
+      '$\\vec{A}\\cdot\\dot{\\vec{A}} / |\\vec{A}|$',
+      '$|\\dot{\\vec{A}}|$',
+      '$\\dot{\\vec{A}}\\cdot\\hat{A}$',
+      '$|\\vec{A}\\times\\dot{\\vec{A}}|/|\\vec{A}|$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Differentiate $|\\vec{A}|^2=\\vec{A}\\cdot\\vec{A}$: $2|\\vec{A}|\\,d|\\vec{A}|/dt = 2\\vec{A}\\cdot\\dot{\\vec{A}}$, giving the result.',
+  },
+  {
+    id: 'vect-q8',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: For differentiable vectors $\\vec{A}(t),\\vec{B}(t)$, $\\dfrac{d}{dt}(\\vec{A}\\times\\vec{B}) = \\vec{A}\\times\\dot{\\vec{B}} + \\dot{\\vec{A}}\\times\\vec{B}$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — the cross product obeys the product rule, with the order of the factors preserved (the cross product is not commutative).',
+  },
+  {
+    id: 'vect-q9',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'If a vector $\\vec{A}(t)$ has constant magnitude, is $\\dot{\\vec{A}}\\perp\\vec{A}$? Is the converse true?',
+    options: [
+      'Both are true: $\\vec{A}\\cdot\\dot{\\vec{A}}=0$ holds iff $d|\\vec{A}|^2/dt=0$.',
+      'The forward statement is true but the converse is false.',
+      'The forward statement is false but the converse is true.',
+      'Neither statement is true.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Differentiating $\\vec{A}\\cdot\\vec{A}=$ const gives $2\\vec{A}\\cdot\\dot{\\vec{A}}=0$; conversely, $\\vec{A}\\cdot\\dot{\\vec{A}}=0$ makes $|\\vec{A}|^2$ constant, hence $|\\vec{A}|$ is constant.',
+  },
+  {
+    id: 'vect-q10',
+    chapterId: 'vectors',
+    topicId: 'vector-algebra-foundations',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'If $\\vec{A}$ has constant magnitude, what is the component of $\\ddot{\\vec{A}}$ along $\\vec{A}$?',
+    options: [
+      '$-|\\dot{\\vec{A}}|^2/|\\vec{A}|$',
+      '$+|\\dot{\\vec{A}}|^2/|\\vec{A}|$',
+      '$0$',
+      '$-|\\dot{\\vec{A}}|/|\\vec{A}|$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Differentiate $\\vec{A}\\cdot\\dot{\\vec{A}}=0$: $\\vec{A}\\cdot\\ddot{\\vec{A}}=-|\\dot{\\vec{A}}|^2$; dividing by $|\\vec{A}|$ gives the component. This is the "centripetal" term.',
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // Dot and cross products: subtleties
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q11',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'What is the component of $\\vec{A}$ perpendicular to $\\vec{B}$?',
+    options: [
+      '$\\vec{A} - \\dfrac{\\vec{A}\\cdot\\vec{B}}{|\\vec{B}|^2}\\vec{B}$',
+      '$\\dfrac{\\vec{A}\\cdot\\vec{B}}{|\\vec{B}|^2}\\vec{B}$',
+      '$\\vec{A}\\times\\vec{B}$',
+      '$\\vec{A} + \\dfrac{\\vec{A}\\cdot\\vec{B}}{|\\vec{B}|^2}\\vec{B}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Subtracting the projection of $\\vec{A}$ onto $\\vec{B}$ from $\\vec{A}$ leaves a vector perpendicular to $\\vec{B}$. Check: dot with $\\vec{B}$ gives zero.',
+  },
+  {
+    id: 'vect-q12',
+    chapterId: 'vectors',
+    topicId: 'dot-and-cross-products',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt:
+      'In the Cauchy–Schwarz inequality $(\\vec{A}\\cdot\\vec{B})^2 \\le |\\vec{A}|^2|\\vec{B}|^2$, when does equality hold?',
+    options: [
+      'When $\\vec{A}$ and $\\vec{B}$ are parallel (or antiparallel).',
+      'When $\\vec{A}$ and $\\vec{B}$ are perpendicular.',
+      'When $|\\vec{A}|=|\\vec{B}|$.',
+      'Never.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The inequality follows from $\\cos^2\\theta\\le 1$; equality requires $\\cos^2\\theta=1$, i.e. $\\theta=0$ or $\\pi$.',
+  }, 
 {
     id: 'vect-q13',
     chapterId: 'vectors',
