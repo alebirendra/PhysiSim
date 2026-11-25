@@ -525,5 +525,164 @@ export const VECTORS_EXERCISES: PracticeQuestion[] = [
     explanation:
       'The BAC–CAB identity expresses the triple product as a linear combination of $\\vec{A}$ and $\\vec{B}$; the "perpendicularity" refers to each factor of the inner cross product, not the outer result.',
   },
+  // ─────────────────────────────────────────────────────────────
+  // Vector calculus
+  // ─────────────────────────────────────────────────────────────
+  {
+    id: 'vect-q21',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Medium',
+    type: 'conceptual',
+    prompt: 'If $\\nabla\\cdot\\vec{F}=0$ everywhere, does it follow that $\\vec{F}$ is constant?',
+    options: [
+      'No — e.g. $\\vec{F}=(y,-x,0)$ has $\\nabla\\cdot\\vec{F}=0$ but varies with position.',
+      'Yes — divergence-free fields are constant.',
+      'Only if $\\vec{F}$ is also irrotational.',
+      'Only in one dimension.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Solenoidal fields need not be uniform; $\\vec{F}=(y,-x,0)$ is a standard counterexample.',
+  },
+  {
+    id: 'vect-q22',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Medium',
+    type: 'multiple-choice',
+    prompt:
+      'For $\\vec{r}=x\\hat{i}+y\\hat{j}+z\\hat{k}$, what are $\\nabla\\cdot\\vec{r}$ and $\\nabla\\times\\vec{r}$?',
+    options: [
+      '$3$ and $\\vec{0}$',
+      '$1$ and $\\vec{0}$',
+      '$3$ and $2\\vec{r}$',
+      '$0$ and $\\vec{0}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Each Cartesian component contributes one to the divergence, giving $3$; the curl of a radial field vanishes.',
+  },
+  {
+    id: 'vect-q23',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Easy',
+    type: 'true-false',
+    prompt:
+      'True or False: $\\nabla\\times(\\nabla\\phi)=\\vec{0}$ for any twice-differentiable scalar field $\\phi$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — equality of mixed partials (Clairaut) makes every component of the curl vanish identically.',
+  },
+  {
+    id: 'vect-q24',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'Which field has $\\nabla\\times\\vec{F}=\\vec{0}$ away from a singular line but is not conservative there?',
+    options: [
+      'The magnetic field of a long straight wire, $\\vec{B}\\propto \\hat{\\phi}/\\rho$.',
+      'A uniform field $\\vec{F}=\\vec{F}_0$.',
+      'The gravitational field $\\vec{g}=-GM\\hat{r}/r^2$.',
+      '$\\vec{F}=\\vec{r}$.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'The azimuthal field $\\hat{\\phi}/\\rho$ is irrotational away from the wire, but its loop integral is non-zero ($\\mu_0 I$), so it is not a gradient.',
+  },
+  {
+    id: 'vect-q25',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'multiple-choice',
+    prompt:
+      'For $\\vec{F}=\\vec{A}\\times\\vec{r}$ with $\\vec{A}$ constant, what are $\\nabla\\cdot\\vec{F}$ and $\\nabla\\times\\vec{F}$?',
+    options: [
+      '$0$ and $2\\vec{A}$',
+      '$3$ and $\\vec{0}$',
+      '$0$ and $\\vec{0}$',
+      '$2\\vec{A}$ and $\\vec{0}$',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Because $\\vec{A}$ is constant and $\\vec{r}$ has $\\nabla\\cdot\\vec{r}=3$, $\\nabla\\times\\vec{r}=\\vec{0}$, one obtains $\\nabla\\cdot(\\vec{A}\\times\\vec{r})=0$ and $\\nabla\\times(\\vec{A}\\times\\vec{r})=2\\vec{A}$.',
+  },
+  {
+    id: 'vect-q26',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'true-false',
+    prompt:
+      'True or False: $\\nabla\\cdot(\\vec{A}\\times\\vec{B}) = \\vec{B}\\cdot(\\nabla\\times\\vec{A}) - \\vec{A}\\cdot(\\nabla\\times\\vec{B})$.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — this is the standard vector identity for the divergence of a cross product.',
+  },
+  {
+    id: 'vect-q27',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Medium',
+    type: 'true-false',
+    prompt:
+      'True or False: The gravitational field $\\vec{g}=-GM\\hat{r}/r^2$ is conservative.',
+    options: ['True', 'False'],
+    correctOptionIndex: 0,
+    explanation:
+      'True — $\\vec{g}=-\\nabla\\Phi$ with $\\Phi=-GM/r$, so the line integral is path-independent.',
+  },
+  {
+    id: 'vect-q28',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'numerical',
+    prompt:
+      'Compute $\\oint \\vec{F}\\cdot d\\vec{r}$ on the unit circle for $\\vec{F}=\\dfrac{(-y,\\,x,\\,0)}{x^2+y^2}$.',
+    numericAnswer: 6.283,
+    numericTolerance: 0.02,
+    unit: '',
+    explanation:
+      'Parametrize by $\\theta$: $\\vec{F}\\cdot d\\vec{r}=d\\theta$, so the integral is $\\int_0^{2\\pi}d\\theta = 2\\pi \\approx 6.283$.',
+  },
+  {
+    id: 'vect-q29',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'numerical',
+    prompt:
+      'Compute the directional derivative of $\\phi(x,y,z)=x^2 y + y z^3$ at $(1,2,0)$ in the direction of $(1,-1,1)$. Give the numerical value.',
+    numericAnswer: 1.732,
+    numericTolerance: 0.02,
+    unit: '',
+    explanation:
+      '$\\nabla\\phi = (2xy,\\,x^2+z^3,\\,3yz^2)$; at $(1,2,0)$ this is $(4,1,0)$. The unit direction is $(1,-1,1)/\\sqrt 3$, so the directional derivative is $(4-1)/\\sqrt 3 = \\sqrt 3 \\approx 1.732$.',
+  },
+  {
+    id: 'vect-q30',
+    chapterId: 'vectors',
+    topicId: 'vector-calculus',
+    difficulty: 'Hard',
+    type: 'conceptual',
+    prompt:
+      'If $\\nabla\\times\\vec{F}=\\vec{0}$ and $\\nabla\\cdot\\vec{F}=0$ in a simply-connected region, what follows?',
+    options: [
+      '$\\vec{F}=-\\nabla\\phi$ with $\\nabla^2\\phi=0$.',
+      '$\\vec{F}$ is constant.',
+      '$\\vec{F}=\\vec{0}$.',
+      '$\\vec{F}=\\nabla\\times\\vec{A}$ with $\\nabla^2\\vec{A}=0$ and $\\nabla\\cdot\\vec{A}\\neq 0$.',
+    ],
+    correctOptionIndex: 0,
+    explanation:
+      'Zero curl on a simply-connected domain gives $\\vec{F}=-\\nabla\\phi$; then zero divergence gives $\\nabla^2\\phi=0$ (harmonic).',
+  },  
 ];
 
