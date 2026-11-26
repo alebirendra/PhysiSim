@@ -112,7 +112,7 @@ export const LEARNING_RESOURCES: LearningResource[] = [
       'Five interactive 1D motion, secant/tangent slope, area-under-curve, and Riemann integration workspaces.',
     chapterIds: ['kinematics'],
     status: 'available',
-  },  
+  },
   {
     id: 'cm-problem-bank',
     subjectId: 'classical-mechanics',
@@ -123,7 +123,7 @@ export const LEARNING_RESOURCES: LearningResource[] = [
       'Graded conceptual, numerical, and diagram exercises calibrated across Easy, Medium, and Hard difficulty tiers.',
     chapterIds: ['vectors', 'kinematics'],
     status: 'available',
-  },  
+  },
 ];
 
 export const CHAPTERS: ChapterItem[] = [
@@ -285,7 +285,7 @@ export const CHAPTERS: ChapterItem[] = [
         refId: 'kinematics',
       },
     ],
-  },  
+  },
   {
     id: 'dynamics',
     subjectId: 'classical-mechanics',
@@ -688,7 +688,7 @@ export const SIMULATIONS: SimulationConfig[] = [
       correctIndex: 1,
       explanation: 'Negative velocity lobes subtract in ∫v(t)dt (displacement) but add positively in ∫|v(t)|dt (distance).',
     },
-  },  
+  },
 ];
 
 export const TOPICS: TopicItem[] = [...VECTORS_TOPICS, ...KINEMATICS_TOPICS];

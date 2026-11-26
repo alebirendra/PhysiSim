@@ -130,14 +130,14 @@ export function AppShell({ currentRoute, onNavigate, children }: AppShellProps) 
         </nav>
 
         {!sidebarCollapsed && (
-          <div className="p-4 border-t border-slate-200">
-            <p className="text-xs font-medium text-slate-500 mb-2">Active Chapter</p>
+          <div className="p-4 border-t border-slate-200 space-y-2">
+            <p className="text-xs font-medium text-slate-500">Active Chapters</p>
             <button
               type="button"
               onClick={() => onNavigate('chapter', { chapterId: 'vectors' })}
               className="w-full text-left p-2.5 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50/40 transition-colors"
             >
-              <div className="text-xs text-slate-500">Classical Mechanics</div>
+              <div className="text-[11px] text-slate-500">Classical Mechanics</div>
               <div className="text-sm font-semibold text-slate-900 mt-0.5">Ch. 1 · Vectors</div>
             </button>
             <button
@@ -147,7 +147,7 @@ export function AppShell({ currentRoute, onNavigate, children }: AppShellProps) 
             >
               <div className="text-[11px] text-slate-500">Classical Mechanics</div>
               <div className="text-sm font-semibold text-slate-900 mt-0.5">Ch. 2 · 1D Kinematics</div>
-            </button>            
+            </button>
           </div>
         )}
       </aside>
