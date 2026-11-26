@@ -240,10 +240,10 @@ export function AppShell({ currentRoute, onNavigate, children }: AppShellProps) 
             </button>
             <button
               type="button"
-              onClick={() => onNavigate('simulations', { simId: 'representation' })}
+              onClick={() => onNavigate('simulations')}
               className="px-3.5 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-medium transition-colors whitespace-nowrap"
             >
-              Vector Lab
+              Simulation Lab
             </button>
           </div>
         </header>
