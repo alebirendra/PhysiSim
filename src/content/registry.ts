@@ -31,7 +31,7 @@ export const SUBJECTS: SubjectItem[] = [
       'gravitation',
       'oscillations',
     ],
-    resourceIds: ['cm-foundations-text', 'vector-lab-suite', 'cm-problem-bank'],
+    resourceIds: ['cm-foundations-text', 'vector-lab-suite', 'kinematics-lab-suite', 'cm-problem-bank'],
     accentColor: '#2563EB',
   },
   {
@@ -153,10 +153,10 @@ export const LEARNING_RESOURCES: LearningResource[] = [
     authorOrSource: 'PhysicsKit Assessment Bank',
     type: 'Problem Bank',
     description:
-      'Graded conceptual, numerical, and vector-diagram exercises calibrated across Easy, Medium, and Hard difficulty tiers.',
-    chapterIds: ['vectors'],
+      'Graded conceptual, numerical, and diagram exercises calibrated across Easy, Medium, and Hard difficulty tiers.',
+    chapterIds: ['vectors', 'kinematics'],
     status: 'available',
-  },
+  },  
 ];
 
 export const CHAPTERS: ChapterItem[] = [
